@@ -5,26 +5,24 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <h2>About</h2>
-        <p>Home / About</p>
-    </div>
+    <h2>About</h2>
+    <p>Home / About</p>
 </template>
 
 <style scoped lang="scss">
 @use "../styles/style.scss" as *;
 
-.container {
-    background-color: $primary-color;
+h2,
+p {
     color: white;
 }
 
 h2 {
     font-size: 40px;
-    padding: 50px 0 0 40px;
+    padding-top: 60px;
 }
 
 p {
-    padding: 20px 0 50px 40px;
+    padding: 20px 0 60px 0;
 }
 </style>
