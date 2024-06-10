@@ -11,12 +11,14 @@ export default {
     };
   },
   methods: {},
-  created() {},
+  created() { },
 };
 </script>
 
 <template>
-  <main></main>
+  <main>
+    <h1>Home</h1>
+  </main>
 </template>
 
 <style scoped></style>
