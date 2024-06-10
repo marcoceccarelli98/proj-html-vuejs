@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: "AppHeader",
+  name: "PageFooter",
 };
 </script>
 
 <template>
-  <header></header>
+  <footer></footer>
 </template>
 
 <style scoped></style>
