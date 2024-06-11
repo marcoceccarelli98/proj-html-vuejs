@@ -21,9 +21,7 @@ export default {
   <h1>About</h1>
 
   <PagePath />
-  <div class="container">
-    <EventsComponent />
-  </div>
+  <EventsComponent />
   <hr />
   <TutorsComponent />
   <DotsCarousel />
@@ -32,11 +30,6 @@ export default {
 
 <style scoped lang="scss">
 @use "../styles/style.scss" as *;
-
-.container {
-  width: 90%;
-  margin: auto;
-}
 
 hr {
   border: none;

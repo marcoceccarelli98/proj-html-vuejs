@@ -5,27 +5,30 @@ export default {
 </script>
 
 <template>
-    <div class="row">
-        <div class="col-50 left-col">
-            <h2>Empowering children to reach their potential.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit neani commodo ligula eget dolor. Aenean massa.Cum
-                sociis Theme natoque penatibus et magnis dis.</p>
-            <div class="numbers">
-                <div class="stories">
-                    <p class="number">168</p>
-                    <p>User stories</p>
-                </div>
-                <div class="events">
-                    <p class="number">347</p>
-                    <p>Scheduled Events</p>
+    <div class="container-90">
+        <div class="row">
+            <div class="col-50 left-col">
+                <h2>Empowering children to reach their potential.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit neani commodo ligula eget dolor. Aenean
+                    massa.Cum
+                    sociis Theme natoque penatibus et magnis dis.</p>
+                <div class="numbers">
+                    <div class="stories">
+                        <p class="number">168</p>
+                        <p>User stories</p>
+                    </div>
+                    <div class="events">
+                        <p class="number">347</p>
+                        <p>Scheduled Events</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-50 img">
-            <img src="/about-video-button.jpg" alt="">
-            <div class="video">
-                <div class="play-container">
-                    <font-awesome-icon class="play-icon" :icon="['fas', 'play']" />
+            <div class="col-50 img">
+                <img src="/about-video-button.jpg" alt="">
+                <div class="video">
+                    <div class="play-container">
+                        <font-awesome-icon class="play-icon" :icon="['fas', 'play']" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,12 +39,7 @@ export default {
 @use "../styles/style.scss" as *;
 
 .row {
-    display: flex;
     padding: 50px 0;
-}
-
-.col-50 {
-    width: 50%;
 }
 
 .left-col {

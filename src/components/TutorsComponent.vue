@@ -18,7 +18,7 @@ export default {
 
 <template>
     <div class="bg-container">
-        <div class="container">
+        <div class="container-90">
             <div class="text">
                 <h2>Top tutors in every subject.</h2>
                 <p>Lorem Ipsn gravida nibh vel velit auctor aliquetnean sollicitudin,lorem quis bibendum</p>
@@ -37,9 +37,7 @@ export default {
     background-color: rgb(247, 247, 247);
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+.container-90 {
     padding: 60px 0;
 }
 

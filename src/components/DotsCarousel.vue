@@ -37,7 +37,7 @@ export default {
 
 <template>
     <div class="parallax-container">
-        <div class="container" v-for="(testimonial, index) in store.aboutTestimonials"
+        <div class="container-70" v-for="(testimonial, index) in store.aboutTestimonials"
             :class="{ display: currentActive == index }">
             <div class="img-container">
                 <img :src="testimonial.img" alt="">
@@ -69,10 +69,8 @@ export default {
     color: white;
 }
 
-.container {
-    width: 70%;
+.container-70 {
     height: 400px;
-    margin: 0 auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -80,7 +78,7 @@ export default {
     display: none;
 }
 
-.container.display {
+.container-70.display {
     display: flex;
 }
 

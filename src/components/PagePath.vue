@@ -6,7 +6,7 @@ export default {
 
 <template>
     <div class="parallax-container">
-        <div class="container">
+        <div class="container-90">
             <h2>About</h2>
             <p>Home / About</p>
         </div>
@@ -30,10 +30,8 @@ export default {
     color: white;
 }
 
-.container {
-    width: 90%;
+.container-90 {
     height: 100px;
-    margin: 0 auto;
 }
 
 h2 {

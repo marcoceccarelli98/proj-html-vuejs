@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container-90">
         <div class="row">
             <div class="col-50">
                 <img src="/about-us-img.png" alt="">
@@ -44,18 +44,8 @@ export default {
 <style scoped lang="scss">
 @use "../styles/style.scss" as *;
 
-.container {
-    width: 90%;
-    margin: auto;
-}
-
 .row {
     padding: 30px 0;
-    display: flex;
-}
-
-.col-50 {
-    width: 50%;
 }
 
 img {
@@ -92,6 +82,7 @@ li div {
     position: absolute;
     top: 4px;
     left: -20px;
+    transition: transform 0.5s ease;
 }
 
 .angle-right.display {
