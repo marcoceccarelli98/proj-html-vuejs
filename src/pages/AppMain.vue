@@ -23,7 +23,8 @@ export default {
     <ArrowsCarousel :carousel="store.homeCarousel" />
     <div class="container-70">
       <!-- ICON LIST -->
-      <div class="icon-list">
+
+      <section class="icon-list">
         <div
           v-for="(icon, index) in store.homeIconList"
           class="icon-square"
@@ -32,15 +33,23 @@ export default {
           <img :src="icon.image" :alt="'image' + index" />
           <p>{{ icon.title }}</p>
         </div>
-      </div>
+      </section>
       <!-- /ICON LIST -->
       <!-- THE TRUSTED NAME -->
-      <div class="row">
-        <div class="col-50"></div>
-        <div class="col-50">
+      <section class="trusted-name row">
+        <div class="col-40">
+          <h2>The Trusted Name for In-Home Tutoring.</h2>
+          <p>
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
+            lorem quis bibendum auci elit consequat ipsutis sem nibh id eis sed
+            odio sit amet nibh vulputate cursus mauris.
+          </p>
+          <router-link :to="{ name: 'about' }">learn more</router-link>
+        </div>
+        <div class="col-60">
           <img src="/public/h5-img-1.jpg" alt="" />
         </div>
-      </div>
+      </section>
       <!-- /THE TRUSTED NAME -->
     </div>
   </main>
@@ -79,6 +88,28 @@ export default {
       line-height: 280px;
       text-align: center;
     }
+  }
+}
+
+.trusted-name {
+  margin-bottom: 100px;
+  display: flex;
+  align-self: flex-end;
+  h2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+  a {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+  img {
+    width: 100%;
   }
 }
 </style>
