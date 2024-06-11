@@ -1,10 +1,10 @@
 <script>
-import AppCarousel from "../components/AppCarousel.vue";
+import ArrowsCarousel from "../components/ArrowsCarousel.vue";
 import { store } from "../data/store.js";
 export default {
   name: "AppMain",
   components: {
-    AppCarousel,
+    ArrowsCarousel,
   },
 
   data() {
@@ -20,7 +20,7 @@ export default {
 <template>
   <main>
     <!-- CAROUSEL -->
-    <AppCarousel :carousel="store.homeCarousel" />
+    <ArrowsCarousel :carousel="store.homeCarousel" />
     <div class="icon-list"></div>
   </main>
 </template>

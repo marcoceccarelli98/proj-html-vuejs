@@ -1,8 +1,8 @@
 <script>
-import PagePath from "../components/PagePath.vue"
+import PagePath from "../components/PagePath.vue";
 import EventsComponent from "../components/EventsComponent.vue";
 import TutorsComponent from "../components/TutorsComponent.vue";
-import AboutCarousel from "../components/AboutCarousel.vue";
+import DotsCarousel from "../components/DotsCarousel.vue";
 
 export default {
   name: "AppAbout",
@@ -10,9 +10,9 @@ export default {
     PagePath,
     EventsComponent,
     TutorsComponent,
-    AboutCarousel
-  }
-}
+    DotsCarousel,
+  },
+};
 </script>
 
 <template>
@@ -22,9 +22,9 @@ export default {
   <div class="container">
     <EventsComponent />
   </div>
-  <hr>
+  <hr />
   <TutorsComponent />
-  <AboutCarousel />
+  <DotsCarousel />
 </template>
 
 <style scoped lang="scss">

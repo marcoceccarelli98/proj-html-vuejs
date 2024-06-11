@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: "AppCarousel",
+  name: "ArrowsCarousel",
   props: {
     carousel: {
       type: Array,
@@ -17,6 +17,7 @@ export default {
       frame: 0,
     };
   },
+
   methods: {
     test() {
       console.log(carousel[0].image);
@@ -38,9 +39,11 @@ export default {
       const intervalCarousel = setInterval(() => this.next(), 5000); // 5000 ms = 5sec
     },
   },
+
   created() {
     this.autoInc();
   },
+
   computed: {
     backgroundStyle() {
       return {
