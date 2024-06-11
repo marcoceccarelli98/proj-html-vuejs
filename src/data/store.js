@@ -30,4 +30,52 @@ export const store = reactive({
       },
     },
   ],
+
+  tutors: [
+    {
+      img: "/instructor-img-1.jpg",
+      name: "Edward Bowman",
+      role: "Associate Professor"
+    },
+    {
+      img: "/instructor-img-2.jpg",
+      name: "Denise Wood",
+      role: "Assistant Professor"
+    },
+    {
+      img: "/instructor-img-3.jpg",
+      name: "Kathryn Webb",
+      role: "Teaching Assistant"
+    },
+    {
+      img: "/instructor-img-4.jpg",
+      name: "Jennifer Powell",
+      role: "Associate Professor"
+    },
+    {
+      img: "/instructor-img-5.jpg",
+      name: "Dave Robbins",
+      role: "Assistant Professor"
+    },
+    {
+      img: "/instructor-img-7.jpg",
+      name: "Keyth Taylor",
+      role: "Teaching Assistant"
+    },
+    {
+      img: "/instructor-img-8.jpg",
+      name: "Jennie King",
+      role: "Assistant Professor"
+    },
+    {
+      img: "/instructor-img-9.jpg",
+      name: "David Sanders",
+      role: "Assistant Professor"
+    },
+    {
+      img: "/instructor-img-6.jpg",
+      name: "Preston Marshall",
+      role: "Associate Professor"
+    },
+  ]
 });

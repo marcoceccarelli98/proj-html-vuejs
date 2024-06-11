@@ -1,12 +1,14 @@
 <script>
 import PagePath from "../components/PagePath.vue"
 import EventsComponent from "../components/EventsComponent.vue";
+import TutorsComponent from "../components/TutorsComponent.vue";
 
 export default {
   name: "AppAbout",
   components: {
     PagePath,
-    EventsComponent
+    EventsComponent,
+    TutorsComponent
   }
 }
 </script>
@@ -20,6 +22,8 @@ export default {
   <div class="container">
     <EventsComponent />
   </div>
+  <hr>
+  <TutorsComponent />
 </template>
 
 <style scoped lang="scss">
@@ -28,5 +32,11 @@ export default {
 .container {
   width: 90%;
   margin: auto;
+}
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: lightgray;
 }
 </style>
