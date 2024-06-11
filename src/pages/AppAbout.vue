@@ -3,6 +3,7 @@ import PagePath from "../components/PagePath.vue";
 import EventsComponent from "../components/EventsComponent.vue";
 import TutorsComponent from "../components/TutorsComponent.vue";
 import DotsCarousel from "../components/DotsCarousel.vue";
+import FaqComponent from "../components/FaqComponent.vue";
 
 export default {
   name: "AppAbout",
@@ -11,6 +12,7 @@ export default {
     EventsComponent,
     TutorsComponent,
     DotsCarousel,
+    FaqComponent
   },
 };
 </script>
@@ -25,6 +27,7 @@ export default {
   <hr />
   <TutorsComponent />
   <DotsCarousel />
+  <FaqComponent />
 </template>
 
 <style scoped lang="scss">
