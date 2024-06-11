@@ -12,7 +12,25 @@ export default {
     methods: {
         selectActive(index) {
             this.currentActive = index;
+        },
+
+        next() {
+            if (this.currentActive !== 2) {
+                this.currentActive++
+            } else {
+                this.currentActive = 0
+            }
+        },
+
+        startCarousel() {
+            setInterval(() => {
+                this.next();
+            }, 3000);
         }
+    },
+
+    mounted() {
+        this.startCarousel();
     }
 }
 </script>
