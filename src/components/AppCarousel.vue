@@ -53,7 +53,19 @@ export default {
       <p>{{ store.homeCarousel[this.frame].text }}</p>
 
       <!-- button -->
-      <button>{{ store.homeCarousel[this.frame].button.btnStr }}</button>
+      <button v-if="store.homeCarousel[this.frame].button.btnType === 'button'">
+        {{ store.homeCarousel[this.frame].button.btnStr }}
+      </button>
+
+      <div
+        v-else="store.homeCarousel[this.frame].button.btnType === 'icon'"
+        class="container-icon"
+      >
+        <font-awesome-icon
+          class="icon"
+          :icon="store.homeCarousel[this.frame].button.btnStr"
+        />
+      </div>
 
       <!-- CAROUSEL NAVIGATION -->
       <a @click.prevent="prev">
@@ -83,7 +95,7 @@ export default {
 }
 
 .content {
-  font-family: ;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   max-width: 800px;
   line-height: 30px;
@@ -116,5 +128,22 @@ p {
   margin-right: 50px;
   height: 80px;
   color: white;
+}
+
+.container-icon {
+  position: relative;
+  height: 90px;
+  width: 90px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 30px auto;
+}
+
+.icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
 }
 </style>

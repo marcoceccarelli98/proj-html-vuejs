@@ -5,6 +5,9 @@ import App from "./App.vue";
 // ROUTER
 import { router } from "./router.js";
 
+// FONT
+import "@fontsource/open-sans";
+
 // FONT AWESOME
 import { library } from "@fortawesome/fontawesome-svg-core";
 /* import font awesome icon component */

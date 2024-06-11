@@ -16,7 +16,7 @@ export const store = reactive({
       title: "Premium Education",
       text: "Lorem Ipsn gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elited odio sit amet nibcursus a sit amet mauris.",
       button: {
-        btnStr: "fas fa-play",
+        btnStr: ["fas", "fa-play"],
         btnType: "icon",
       },
     },
@@ -25,7 +25,7 @@ export const store = reactive({
       title: "Contemporary Ideas",
       text: "Lorem Ipsn gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elited odio sit amet nibcursus a sit amet mauris.",
       button: {
-        btnStr: "fas fa-play",
+        btnStr: ["fas", "fa-play"],
         btnType: "icon",
       },
     },
@@ -35,47 +35,47 @@ export const store = reactive({
     {
       img: "/instructor-img-1.jpg",
       name: "Edward Bowman",
-      role: "Associate Professor"
+      role: "Associate Professor",
     },
     {
       img: "/instructor-img-2.jpg",
       name: "Denise Wood",
-      role: "Assistant Professor"
+      role: "Assistant Professor",
     },
     {
       img: "/instructor-img-3.jpg",
       name: "Kathryn Webb",
-      role: "Teaching Assistant"
+      role: "Teaching Assistant",
     },
     {
       img: "/instructor-img-4.jpg",
       name: "Jennifer Powell",
-      role: "Associate Professor"
+      role: "Associate Professor",
     },
     {
       img: "/instructor-img-5.jpg",
       name: "Dave Robbins",
-      role: "Assistant Professor"
+      role: "Assistant Professor",
     },
     {
       img: "/instructor-img-7.jpg",
       name: "Keyth Taylor",
-      role: "Teaching Assistant"
+      role: "Teaching Assistant",
     },
     {
       img: "/instructor-img-8.jpg",
       name: "Jennie King",
-      role: "Assistant Professor"
+      role: "Assistant Professor",
     },
     {
       img: "/instructor-img-9.jpg",
       name: "David Sanders",
-      role: "Assistant Professor"
+      role: "Assistant Professor",
     },
     {
       img: "/instructor-img-6.jpg",
       name: "Preston Marshall",
-      role: "Associate Professor"
+      role: "Associate Professor",
     },
-  ]
+  ],
 });
