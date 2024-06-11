@@ -21,8 +21,8 @@ export default {
     },
     prev() {
       this.frame--;
-      if (this.frame <= 0) {
-        this.frame = store.homeCarousel.length;
+      if (this.frame < 0) {
+        this.frame = store.homeCarousel.length - 1;
       }
     },
     next() {
@@ -83,6 +83,7 @@ export default {
 }
 
 .content {
+  font-family: ;
   text-align: center;
   max-width: 800px;
   line-height: 30px;
@@ -101,7 +102,7 @@ p {
 
 .left-arrow {
   position: absolute;
-  top: 50;
+  top: 400px;
   left: 0;
   margin-left: 50px;
   height: 80px;
@@ -110,7 +111,7 @@ p {
 
 .right-arrow {
   position: absolute;
-  top: 50;
+  top: 400px;
   right: 0;
   margin-right: 50px;
   height: 80px;
