@@ -19,8 +19,9 @@ export default {
 
 <template>
   <main>
-    <h1>Home</h1>
-    <AppCarousel />
+    <!-- CAROUSEL -->
+    <AppCarousel :carousel="store.homeCarousel" />
+    <div class="icon-list"></div>
   </main>
 </template>
 

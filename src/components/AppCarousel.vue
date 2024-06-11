@@ -4,39 +4,47 @@
 <!-- ---------------------------- -->
 
 <script>
-import { store } from "../data/store.js";
 export default {
   name: "AppCarousel",
-  props: ["image", "title", "text", "button"],
+  props: {
+    carousel: {
+      type: Array,
+    },
+  },
 
   data() {
     return {
-      store,
       frame: 0,
     };
   },
   methods: {
     test() {
-      console.log(store.homeCarousel[0].image);
+      console.log(carousel[0].image);
     },
     prev() {
       this.frame--;
       if (this.frame < 0) {
-        this.frame = store.homeCarousel.length - 1;
+        this.frame = this.carousel.length - 1;
       }
     },
     next() {
       this.frame++;
-      if (this.frame >= store.homeCarousel.length) {
+      if (this.frame >= this.carousel.length) {
         this.frame = 0;
       }
     },
+    autoInc() {
+      console.log("AUTO INC");
+      const intervalCarousel = setInterval(() => this.next(), 5000); // 5000 ms = 5sec
+    },
   },
-  created() {},
+  created() {
+    this.autoInc();
+  },
   computed: {
     backgroundStyle() {
       return {
-        backgroundImage: "url(" + store.homeCarousel[this.frame].image + ")",
+        backgroundImage: "url(" + this.carousel[this.frame].image + ")",
       };
     },
   },
@@ -48,22 +56,22 @@ export default {
     <!-- <button @click="test">TEST</button> -->
     <div class="content">
       <!-- TITLE -->
-      <h1>{{ store.homeCarousel[this.frame].title }}</h1>
+      <h1>{{ carousel[this.frame].title }}</h1>
       <!-- TEXT -->
-      <p>{{ store.homeCarousel[this.frame].text }}</p>
+      <p>{{ carousel[this.frame].text }}</p>
 
       <!-- button -->
-      <button v-if="store.homeCarousel[this.frame].button.btnType === 'button'">
-        {{ store.homeCarousel[this.frame].button.btnStr }}
+      <button v-if="carousel[this.frame].button.btnType === 'button'">
+        {{ carousel[this.frame].button.btnStr }}
       </button>
 
       <div
-        v-else="store.homeCarousel[this.frame].button.btnType === 'icon'"
+        v-else="carousel[this.frame].button.btnType === 'icon'"
         class="container-icon"
       >
         <font-awesome-icon
           class="icon"
-          :icon="store.homeCarousel[this.frame].button.btnStr"
+          :icon="carousel[this.frame].button.btnStr"
         />
       </div>
 
@@ -81,8 +89,9 @@ export default {
   </div>
 </template>
 
-<!-- `${store.homeCarousel[this.frame].image}` -->
+<!-- `${carousel[this.frame].image}` -->
 <style scoped lang="scss">
+@use "../styles/partials/variables.scss" as *;
 .bgImage {
   position: relative;
   display: flex;
@@ -109,7 +118,7 @@ h1 {
 
 p {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .left-arrow {
@@ -129,7 +138,18 @@ p {
   height: 80px;
   color: white;
 }
+// BUTTON
+button {
+  margin-top: 40px;
+  padding: 20px 40px;
+  background-color: $primary-color;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  border: none;
+}
 
+// ICON
 .container-icon {
   position: relative;
   height: 90px;

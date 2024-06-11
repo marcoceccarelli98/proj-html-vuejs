@@ -1,6 +1,7 @@
 import { reactive } from "vue";
 
 export const store = reactive({
+  // HOME
   homeCarousel: [
     {
       image: "/h5-slide-1-background.jpg",
@@ -31,6 +32,9 @@ export const store = reactive({
     },
   ],
 
+  homeIconList: [{}],
+
+  // ABOUT
   tutors: [
     {
       img: "/instructor-img-1.jpg",
