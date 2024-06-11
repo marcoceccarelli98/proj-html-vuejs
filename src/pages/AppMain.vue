@@ -1,9 +1,11 @@
 <script>
-import axios from "axios";
+import AppCarousel from "../components/AppCarousel.vue";
 import { store } from "../data/store.js";
 export default {
   name: "AppMain",
-  components: {},
+  components: {
+    AppCarousel,
+  },
 
   data() {
     return {
@@ -11,13 +13,14 @@ export default {
     };
   },
   methods: {},
-  created() { },
+  created() {},
 };
 </script>
 
 <template>
   <main>
     <h1>Home</h1>
+    <AppCarousel />
   </main>
 </template>
 
