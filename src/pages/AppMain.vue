@@ -29,7 +29,7 @@ export default {
           :key="'icon' + index"
         >
           <img :src="icon.image" :alt="'image' + index" />
-          <span>{{ icon.title }}</span>
+          <p>{{ icon.title }}</p>
         </div>
       </div>
     </div>
@@ -40,21 +40,34 @@ export default {
 @use "../styles/partials/variables.scss" as *;
 
 .icon-list {
-  padding: 80px 20px;
+  padding: 80px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   .icon-square {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    font-weight: bold;
+    font-size: large;
     height: 200px;
     width: 200px;
-    // padding: 40px;
     background-color: $bg-home-icon-list;
+    &:hover {
+      img {
+        top: 30%;
+        transition: 0.3s;
+      }
+    }
     img {
+      position: absolute;
+      left: 50%;
+      top: 35%;
+      transition: 0.3s;
+      transform: translate(-50%, -50%);
       margin-bottom: 10px;
+    }
+    p {
+      line-height: 280px;
+      text-align: center;
     }
   }
 }
