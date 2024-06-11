@@ -2,21 +2,21 @@
 import PagePath from "../components/PagePath.vue"
 import EventsComponent from "../components/EventsComponent.vue";
 import TutorsComponent from "../components/TutorsComponent.vue";
+import AboutCarousel from "../components/AboutCarousel.vue";
 
 export default {
   name: "AppAbout",
   components: {
     PagePath,
     EventsComponent,
-    TutorsComponent
+    TutorsComponent,
+    AboutCarousel
   }
 }
 </script>
 
 <template>
   <h1>About</h1>
-  <font-awesome-icon icon="fa-solid fa-user-secret" />
-  <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
 
   <PagePath />
   <div class="container">
@@ -24,6 +24,7 @@ export default {
   </div>
   <hr>
   <TutorsComponent />
+  <AboutCarousel />
 </template>
 
 <style scoped lang="scss">

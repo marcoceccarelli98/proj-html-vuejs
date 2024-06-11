@@ -78,4 +78,22 @@ export const store = reactive({
       role: "Associate Professor",
     },
   ],
+
+  aboutTestimonials: [
+    {
+      img: "/testimonials-standard-3-100x100.png",
+      name: "Jonathan Gibson",
+      role: "Teaching Assistant",
+    },
+    {
+      img: "/testimonials-standard-5-100x100.png",
+      name: "Brooke Austin",
+      role: "Teaching Assistant",
+    },
+    {
+      img: "/testimonials-standard-4-100x100.png",
+      name: "Rachel Collins",
+      role: "Student",
+    },
+  ],
 });
