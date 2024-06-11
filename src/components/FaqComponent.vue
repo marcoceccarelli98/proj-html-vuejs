@@ -1,6 +1,18 @@
 <script>
 export default {
-    name: "FaqComponent"
+    name: "FaqComponent",
+    data() {
+        return {
+            currentActive: 0,
+            faqs: ["Can I just enroll in a single course?", "What is the refund policy?", "What background knowledge is necessary?", "Do I need to take the courses in a specific order?"]
+        }
+    },
+
+    methods: {
+        selectActive(index) {
+            this.currentActive = index;
+        },
+    }
 }
 </script>
 
@@ -13,32 +25,13 @@ export default {
             <div class="col-50">
                 <h3>FAQs</h3>
                 <ul>
-                    <li>
+                    <li v-for="(faq, index) in faqs" @click="selectActive(index)">
                         <div>
-                            <font-awesome-icon :icon="['fas', 'caret-down']" />
-                            <h4>Can I just enroll in a single course?</h4>
-                            <p>Lorem ipsum proin gravida velit auctor aliquet. Aenean sollicitu din, lorem auci elit
-                                consequat ipsutissem niuis sed odio sit amet a sit amet.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h4>What is the refund policy?</h4>
-                            <p>Lorem ipsum proin gravida velit auctor aliquet. Aenean sollicitu din, lorem auci elit
-                                consequat ipsutissem niuis sed odio sit amet a sit amet.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h4>What background knowledge is necessary?</h4>
-                            <p>Lorem ipsum proin gravida velit auctor aliquet. Aenean sollicitu din, lorem auci elit
-                                consequat ipsutissem niuis sed odio sit amet a sit amet.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h4>Do I need to take the courses in a specific order?</h4>
-                            <p>Lorem ipsum proin gravida velit auctor aliquet. Aenean sollicitu din, lorem auci elit
+                            <font-awesome-icon class="angle-right" :icon="['fas', 'angle-right']"
+                                :class="{ display: currentActive == index }" />
+                            <h4> {{ faq }}</h4>
+                            <p :class="{ display: currentActive == index }">Lorem ipsum proin gravida velit auctor aliquet.
+                                Aenean sollicitu din, lorem auci elit
                                 consequat ipsutissem niuis sed odio sit amet a sit amet.</p>
                         </div>
                     </li>
@@ -48,7 +41,9 @@ export default {
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use "../styles/style.scss" as *;
+
 .container {
     width: 90%;
     margin: auto;
@@ -75,8 +70,31 @@ h4 {
     margin-bottom: 30px;
 }
 
+p {
+    display: none;
+}
+
+p.display {
+    display: block;
+}
+
 li {
-    padding: 30px;
+    padding: 30px 40px;
     border: 1px solid rgb(235, 235, 235);
+}
+
+li div {
+    position: relative;
+}
+
+.angle-right {
+    color: $primary-color;
+    position: absolute;
+    top: 4px;
+    left: -20px;
+}
+
+.angle-right.display {
+    transform: rotate(90deg);
 }
 </style>

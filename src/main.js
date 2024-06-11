@@ -17,10 +17,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faSearch, faPlay, faChevronLeft, faChevronRight, faCaretDown);
+library.add(faSearch, faPlay, faChevronLeft, faChevronRight, faAngleRight);
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)
