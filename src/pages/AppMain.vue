@@ -22,6 +22,7 @@ export default {
     <!-- CAROUSEL -->
     <ArrowsCarousel :carousel="store.homeCarousel" />
     <div class="container-70">
+      <!-- ICON LIST -->
       <div class="icon-list">
         <div
           v-for="(icon, index) in store.homeIconList"
@@ -32,6 +33,15 @@ export default {
           <p>{{ icon.title }}</p>
         </div>
       </div>
+      <!-- /ICON LIST -->
+      <!-- THE TRUSTED NAME -->
+      <div class="row">
+        <div class="col-50"></div>
+        <div class="col-50">
+          <img src="/public/h5-img-1.jpg" alt="" />
+        </div>
+      </div>
+      <!-- /THE TRUSTED NAME -->
     </div>
   </main>
 </template>
