@@ -107,7 +107,6 @@ export default {
 }
 
 .content {
-  font-family: "Open Sans", sans-serif;
   text-align: center;
   max-width: 800px;
   line-height: 30px;
