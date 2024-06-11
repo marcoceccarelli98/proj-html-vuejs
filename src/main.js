@@ -18,9 +18,17 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faSearch, faPlay, faChevronLeft, faChevronRight, faAngleRight);
+library.add(
+  faSearch,
+  faPlay,
+  faChevronLeft,
+  faChevronRight,
+  faAngleRight,
+  faCheck
+);
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)

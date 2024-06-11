@@ -1,10 +1,12 @@
 <script>
 import ArrowsCarousel from "../components/ArrowsCarousel.vue";
+import DotsCarousel from "../components/DotsCarousel.vue";
 import { store } from "../data/store.js";
 export default {
   name: "AppMain",
   components: {
     ArrowsCarousel,
+    DotsCarousel,
   },
 
   data() {
@@ -52,6 +54,81 @@ export default {
       </section>
       <!-- /THE TRUSTED NAME -->
     </div>
+    <hr />
+    <div class="container-70">
+      <!-- EMPOWERING -->
+      <section class="empowering row">
+        <div class="col-60">
+          <img src="/public/h5-img-2.jpg" alt="" />
+        </div>
+        <div class="col-40">
+          <h2>Empowering Children to Reach Their Potential.</h2>
+          <p>
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
+            lorem quis bibendum auci elit consequat ipsutis sem nibh id eis sed
+            odio sit amet nibh vulputate.
+          </p>
+          <div class="numbers">
+            <div class="stories">
+              <p class="number">168</p>
+              <p>User stories</p>
+            </div>
+            <div class="events">
+              <p class="number">347</p>
+              <p>Scheduled Events</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /EMPOWERING -->
+      <!-- DOTS CAROUSEL -->
+      <div class="container-1920">
+        <DotsCarousel />
+      </div>
+      <!-- /DOTS CAROUSEL -->
+      <!-- INFO -->
+      <div class="info-container">
+        <div class="row">
+          <div class="col-30">
+            <div v-for="info in store.homeInfo.info" class="selection">
+              {{ info.selection }}
+            </div>
+          </div>
+          <div class="col-70">
+            <div class="info">
+              <h2>{{ store.homeInfo.info[store.homeInfo.index].title }}</h2>
+              <p>{{ store.homeInfo.info[store.homeInfo.index].text }}</p>
+              <div class="row">
+                <!-- LIST -->
+                <div class="col-80">
+                  <ul>
+                    <li
+                      v-for="item in store.homeInfo.info[store.homeInfo.index]
+                        .list"
+                    >
+                      <font-awesome-icon
+                        class="check"
+                        :icon="['fas', 'fa-check']"
+                      />{{ item }}
+                    </li>
+                  </ul>
+                </div>
+                <!-- /LIST -->
+                <!-- IMAGE -->
+                <div class="col-20">
+                  <img
+                    :src="store.homeInfo.info[store.homeInfo.index].image"
+                    :alt="store.homeInfo.info[store.homeInfo.index].image"
+                  />
+                </div>
+                <!-- /IMAGE -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /INFO -->
+    </div>
   </main>
 </template>
 
@@ -92,15 +169,14 @@ export default {
 }
 
 .trusted-name {
-  margin-bottom: 100px;
-  display: flex;
-  align-self: flex-end;
   h2 {
     margin-top: 100px;
     margin-bottom: 20px;
     font-size: 40px;
   }
   p {
+    color: grey;
+    line-height: 30px;
     margin-bottom: 20px;
   }
   a {
@@ -110,6 +186,89 @@ export default {
   }
   img {
     width: 100%;
+  }
+}
+
+.empowering {
+  margin-top: 100px;
+  h2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+  p {
+    color: grey;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+  a {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+  img {
+    width: 80%;
+  }
+
+  // NUMBERS
+  .numbers {
+    display: flex;
+    margin: 60px 0;
+  }
+  .numbers p {
+    color: $primary-color;
+    font-weight: 700;
+  }
+  .stories {
+    margin-right: 180px;
+  }
+  .number {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+.info-container {
+  margin: 100px 0;
+  .selection {
+    width: 100%;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    border-collapse: collapse;
+    padding: 25px;
+    &:last-of-type {
+      border-bottom: 1px solid grey;
+    }
+  }
+  .info {
+    color: grey;
+    padding: 20px 60px;
+    font-size: 17px;
+    h2 {
+      color: black;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 50px;
+    }
+    .row {
+      justify-content: space-between;
+      ul {
+        line-height: 40px;
+      }
+      .check {
+        color: $primary-color;
+        margin-right: 10px;
+      }
+      .col-20 {
+        margin-top: 50px;
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 </style>
