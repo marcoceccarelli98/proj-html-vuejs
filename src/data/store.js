@@ -35,27 +35,27 @@ export const store = reactive({
   homeIconList: [
     {
       title: "Languages",
-      icon: "/h5-custom-icon-1.png",
+      image: "/h5-custom-icon-1.png",
     },
     {
       title: "Software",
-      icon: "/h5-custom-icon-2.png",
+      image: "/h5-custom-icon-2.png",
     },
     {
       title: "Business",
-      icon: "/h5-custom-icon-3.png",
+      image: "/h5-custom-icon-3.png",
     },
     {
       title: "Chemistry",
-      icon: "/h5-custom-icon-4.png",
+      image: "/h5-custom-icon-4.png",
     },
     {
       title: "Science",
-      icon: "/h5-custom-icon-5.png",
+      image: "/h5-custom-icon-5.png",
     },
     {
       title: "DIY&Craft",
-      icon: "/h5-custom-icon-6.png",
+      image: "/h5-custom-icon-6.png",
     },
   ],
 
