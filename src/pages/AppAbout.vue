@@ -14,13 +14,16 @@ export default {
     DotsCarousel,
     FaqComponent
   },
+  data() {
+    return {
+      title: "About"
+    }
+  }
 };
 </script>
 
 <template>
-  <h1>About</h1>
-
-  <PagePath />
+  <PagePath :title="title" />
   <EventsComponent />
   <hr />
   <TutorsComponent />

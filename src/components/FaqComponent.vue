@@ -23,7 +23,7 @@ export default {
                 <img src="/about-us-img.png" alt="">
             </div>
             <div class="col-50">
-                <h3>FAQs</h3>
+                <h2>FAQs</h2>
                 <ul>
                     <li v-for="(faq, index) in faqs" @click="selectActive(index)">
                         <div>
@@ -45,14 +45,14 @@ export default {
 @use "../styles/style.scss" as *;
 
 .row {
-    padding: 30px 0;
+    padding: 40px 0;
 }
 
 img {
     width: 100%;
 }
 
-h3 {
+h2 {
     margin-bottom: 20px;
 }
 

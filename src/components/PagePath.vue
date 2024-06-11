@@ -1,14 +1,15 @@
 <script>
 export default {
-    name: "PagePath"
+    name: "PagePath",
+    props: ["title"]
 }
 </script>
 
 <template>
     <div class="parallax-container">
         <div class="container-90">
-            <h2>About</h2>
-            <p>Home / About</p>
+            <h2>{{ title }}</h2>
+            <p>Home / {{ title }}</p>
         </div>
     </div>
 </template>
