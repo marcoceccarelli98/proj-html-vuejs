@@ -12,16 +12,26 @@ export default {
   data() {
     return {
       store,
+      infoIndex: 0,
     };
   },
-  methods: {},
+  methods: {
+    setInfoIndex(value) {
+      store.homeInfo.index = value;
+      console.log(store.homeInfo.index);
+    },
+  },
   created() {},
 };
 </script>
 
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------ -->
+
 <template>
   <main>
-    <!-- CAROUSEL -->
+    <!-- ------------------------------ CAROUSEL ------------------------------ -->
     <ArrowsCarousel :carousel="store.homeCarousel" />
     <div class="container-70">
       <!-- ICON LIST -->
@@ -37,7 +47,7 @@ export default {
         </div>
       </section>
       <!-- /ICON LIST -->
-      <!-- THE TRUSTED NAME -->
+      <!-- ------------------------------ THE TRUSTED NAME ------------------------------ -->
       <section class="trusted-name row">
         <div class="col-40">
           <h2>The Trusted Name for In-Home Tutoring.</h2>
@@ -56,7 +66,7 @@ export default {
     </div>
     <hr />
     <div class="container-70">
-      <!-- EMPOWERING -->
+      <!-- ------------------------------ EMPOWERING ------------------------------ -->
       <section class="empowering row">
         <div class="col-60">
           <img src="/public/h5-img-2.jpg" alt="" />
@@ -81,19 +91,28 @@ export default {
         </div>
       </section>
       <!-- /EMPOWERING -->
-      <!-- DOTS CAROUSEL -->
+      <!-- ------------------------------ DOTS CAROUSEL ------------------------------ -->
       <div class="container-1920">
         <DotsCarousel />
       </div>
       <!-- /DOTS CAROUSEL -->
-      <!-- INFO -->
-      <div class="info-container">
+      <!-- ------------------------------ INFO ------------------------------ -->
+      <section class="info-container">
         <div class="row">
+          <!-- SELECTION -->
           <div class="col-30">
-            <div v-for="info in store.homeInfo.info" class="selection">
-              {{ info.selection }}
+            <div
+              v-for="(info, index) in store.homeInfo.info"
+              class="selection"
+              @click="setInfoIndex(index)"
+              :class="{ active: index === store.homeInfo.index }"
+            >
+              <a href="">
+                {{ info.selection }}
+              </a>
             </div>
           </div>
+          <!-- /SELECTION -->
           <div class="col-70">
             <div class="info">
               <h2>{{ store.homeInfo.info[store.homeInfo.index].title }}</h2>
@@ -126,14 +145,20 @@ export default {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <!-- /INFO -->
     </div>
   </main>
 </template>
 
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------ -->
+
 <style scoped lang="scss">
 @use "../styles/partials/variables.scss" as *;
+
+//  ------------------------------ ICON LIST ------------------------------
 
 .icon-list {
   padding: 80px 0;
@@ -168,6 +193,8 @@ export default {
   }
 }
 
+//  ------------------------------ TRUSTED NAME ------------------------------
+
 .trusted-name {
   h2 {
     margin-top: 100px;
@@ -188,6 +215,8 @@ export default {
     width: 100%;
   }
 }
+
+//  ------------------------------ EMPOWERING ------------------------------
 
 .empowering {
   margin-top: 100px;
@@ -228,22 +257,47 @@ export default {
   }
 }
 
+//  ------------------------------ INFO ------------------------------
+
 .info-container {
   margin: 100px 0;
+
   .selection {
     width: 100%;
-    border-left: 1px solid grey;
-    border-top: 1px solid grey;
-    border-right: 1px solid grey;
-    border-collapse: collapse;
     padding: 25px;
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-collapse: collapse;
     &:last-of-type {
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid lightgray;
+    }
+    &:hover {
+      a {
+        color: $primary-color;
+        margin-left: 10px;
+        transition: 0.3s;
+      }
+    }
+
+    a {
+      transition: 0.3s;
+      color: grey;
+      font-weight: bold;
+    }
+  }
+  .active {
+    background-color: #fcfcfc;
+    border-left: 10px solid $primary-color;
+    a {
+      color: $primary-color;
+      margin-left: 10px;
+      transition: 0.3s;
     }
   }
   .info {
     color: grey;
-    padding: 20px 60px;
+    padding: 10px 50px;
     font-size: 17px;
     h2 {
       color: black;
@@ -265,7 +319,7 @@ export default {
       .col-20 {
         margin-top: 50px;
         img {
-          width: 100%;
+          width: 90%;
         }
       }
     }
