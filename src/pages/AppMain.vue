@@ -157,15 +157,13 @@ export default {
       </section>
       <!-- /INFO -->
       <!-- ONLINE COURSES -->
-      <section class="my-100">
-        <div class="online-courses">
-          <h2>Popular Online Courses</h2>
-          <h4>
-            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
-            lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
-          </h4>
-          <SwiperCardsCarousel :cards="store.onlineCourses" />
-        </div>
+      <section class="online-courses my-100">
+        <h2>Popular Online Courses</h2>
+        <h4>
+          Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
+          lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
+        </h4>
+        <SwiperCardsCarousel :cards="store.onlineCourses" />
       </section>
       <!-- /ONLINE COURSES -->
     </div>
@@ -345,13 +343,20 @@ export default {
       }
     }
   }
+}
 
-  //  ------------------------------ INFO ------------------------------
+//  ------------------------------ ONLINE COURSES ------------------------------
 
-  .online-courses {
-    h2 {
-      text-align: center;
-    }
+.online-courses {
+  text-align: center;
+  h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+  h4 {
+    color: gray;
+    font-weight: lighter;
+    margin-bottom: 80px;
   }
 }
 </style>
