@@ -42,7 +42,7 @@ export default {
   <main>
     <!-- ------------------------------ CAROUSEL ------------------------------ -->
     <ArrowsCarousel :carousel="store.homeCarousel" />
-    <div class="container-70">
+    <div class="container-80">
       <!-- ICON LIST -->
 
       <section class="icon-list">
@@ -68,17 +68,17 @@ export default {
           <router-link :to="{ name: 'about' }">learn more</router-link>
         </div>
         <div class="col-60">
-          <img src="/public/h5-img-1.jpg" alt="" />
+          <img src="/h5-img-1.jpg" alt="" />
         </div>
       </section>
       <!-- /THE TRUSTED NAME -->
     </div>
     <hr />
-    <div class="container-70">
+    <div class="container-80">
       <!-- ------------------------------ EMPOWERING ------------------------------ -->
       <section class="empowering row">
         <div class="col-60">
-          <img src="/public/h5-img-2.jpg" alt="" />
+          <img src="/h5-img-2.jpg" alt="" />
         </div>
         <div class="col-40">
           <h2>Empowering Children to Reach Their Potential.</h2>
@@ -157,16 +157,111 @@ export default {
       </section>
       <!-- /INFO -->
       <!-- ONLINE COURSES -->
-      <section class="online-courses my-100">
-        <h2>Popular Online Courses</h2>
-        <h4>
-          Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
-          lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
-        </h4>
-        <SwiperCardsCarousel :cards="store.onlineCourses" />
-      </section>
-      <!-- /ONLINE COURSES -->
     </div>
+    <div class="bg-image">
+      <div class="container-80">
+        <section class="online-courses my-100">
+          <h2>Popular Online Courses</h2>
+          <h4>
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
+            lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
+          </h4>
+          <SwiperCardsCarousel :cards="store.onlineCourses" />
+        </section>
+      </div>
+    </div>
+    <hr />
+    <!-- /ONLINE COURSES -->
+    <!-- BEST TUTORS -->
+    <section class="my-100">
+      <div class="container-80">
+        <div class="tutors-text">
+          <h2>The Best Tutors in Town</h2>
+          <h4>
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
+            lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
+          </h4>
+        </div>
+        <div class="tutor-cards">
+          <!-- ---------- CARD 1 ---------- -->
+          <div class="tutor-card">
+            <img class="tutor-img" src="/h5-team-member-1.jpg" alt="" />
+            <h3>Brenda Harris</h3>
+            <h4>Teacher</h4>
+            <p>
+              Lorem ipsum oin gravida nibh vel veliauctor aliquenean
+              sollicitudin, lorem quis bibendum auctor, nisi elit consequa
+            </p>
+            <div class="tutor-social">
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-twitter']"
+              />
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-instagram']"
+              />
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-facebook-f']"
+              />
+            </div>
+          </div>
+
+          <!-- ---------- CARD 2 ---------- -->
+          <div class="tutor-card">
+            <img class="tutor-img" src="/h5-team-member-2.jpg" alt="" />
+            <h3>Lisa Griffin</h3>
+            <h4>Teacher</h4>
+            <p>
+              Lorem ipsum oin gravida nibh vel veliauctor aliquenean
+              sollicitudin, lorem quis bibendum auctor, nisi elit consequa
+            </p>
+            <div class="tutor-social">
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-twitter']"
+              />
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-instagram']"
+              />
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-facebook-f']"
+              />
+            </div>
+          </div>
+
+          <!-- ---------- CARD 3 ---------- -->
+          <div class="tutor-card">
+            <img class="tutor-img" src="/h5-team-member-3.jpg" alt="" />
+            <h3>Victor Green</h3>
+            <h4>Teacher</h4>
+            <p>
+              Lorem ipsum oin gravida nibh vel veliauctor aliquenean
+              sollicitudin, lorem quis bibendum auctor, nisi elit consequa
+            </p>
+            <div class="tutor-social">
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-twitter']"
+              />
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-instagram']"
+              />
+              <font-awesome-icon
+                class="social-icon"
+                :icon="['fab', 'fa-facebook-f']"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- /BEST TUTORS -->
   </main>
 </template>
 
@@ -347,8 +442,29 @@ export default {
 
 //  ------------------------------ ONLINE COURSES ------------------------------
 
-.online-courses {
+.bg-image {
+  background-image: url("/page-background-img.png");
+  padding: 100px 0;
+  .online-courses {
+    text-align: center;
+    h2 {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+    h4 {
+      color: gray;
+      font-weight: lighter;
+      margin-bottom: 80px;
+    }
+  }
+}
+
+//  ------------------------------ BEST TUTORS ------------------------------
+
+.tutors-text {
+  margin: 0 auto;
   text-align: center;
+  max-width: 580px;
   h2 {
     font-size: 45px;
     margin-bottom: 20px;
@@ -357,6 +473,40 @@ export default {
     color: gray;
     font-weight: lighter;
     margin-bottom: 80px;
+  }
+}
+
+.tutor-cards {
+  display: flex;
+  justify-content: space-between;
+  .tutor-card {
+    margin: 0 50px;
+    width: calc(100% / 3 - 30px);
+    text-align: center;
+    color: $grey-subtitle;
+    img {
+      display: inline-block;
+      width: 155px;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 25px;
+      color: black;
+    }
+    h4 {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 15px 0;
+    }
+    p {
+      font-size: 16px;
+      color: $grey-paragraph;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+    .social-icon {
+      margin: 0 10px;
+    }
   }
 }
 </style>

@@ -13,7 +13,7 @@ export const store = reactive({
       },
     },
     {
-      image: "/public/h5-slide-2-background.jpg",
+      image: "/h5-slide-2-background.jpg",
       title: "Premium Education",
       text: "Lorem Ipsn gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elited odio sit amet nibcursus a sit amet mauris.",
       button: {
@@ -22,7 +22,7 @@ export const store = reactive({
       },
     },
     {
-      image: "/public/h5-slide-3-background.jpg",
+      image: "/h5-slide-3-background.jpg",
       title: "Contemporary Ideas",
       text: "Lorem Ipsn gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elited odio sit amet nibcursus a sit amet mauris.",
       button: {
@@ -305,8 +305,8 @@ export const store = reactive({
         { name: "Home 10" },
         { name: "Home 11" },
         { name: "Home 12" },
-        { name: "Landing" }
-      ]
+        { name: "Landing" },
+      ],
     },
     {
       name: "Courses",
@@ -320,36 +320,36 @@ export const store = reactive({
           name: "BUSINESS",
           img: "course-4-f-img.jpg",
           text: "Basic Marketing",
-          price: "$40"
+          price: "$40",
         },
         {
           name: "LANGUAGE",
           img: "course-1-f-img.jpg",
           text: "Business English",
-          price: "$20"
+          price: "$20",
         },
         {
           name: "PROGRAMMING",
           img: "course-2-f-img.jpg",
           text: "Social Computing",
-          price: "free"
-        }
+          price: "free",
+        },
       ],
     },
     {
       name: "Instructors",
       subItems: [
         { name: "Become an Instructor" },
-        { name: "Instructor Single" }
-      ]
+        { name: "Instructor Single" },
+      ],
     },
     {
       name: "Events",
       subItems: [
         { name: "Events Calendar" },
         { name: "Events List" },
-        { name: "Event Single" }
-      ]
+        { name: "Event Single" },
+      ],
     },
     {
       name: "Pages",
@@ -367,8 +367,8 @@ export const store = reactive({
             { name: "Quote Post" },
             { name: "Link Post" },
             { name: "Audio Post" },
-            { name: "Video Post" }
-          ]
+            { name: "Video Post" },
+          ],
         },
         {
           name: "Shop",
@@ -386,21 +386,18 @@ export const store = reactive({
             { name: "Five Columns Wide" },
             { name: "My account" },
             { name: "Cart" },
-            { name: "Checkout" }
-          ]
+            { name: "Checkout" },
+          ],
         },
         {
           name: "Forums",
-          subItems: [
-            { name: "All Forums" },
-            { name: "Forum Topic" }
-          ]
+          subItems: [{ name: "All Forums" }, { name: "Forum Topic" }],
         },
         { name: "Contact" },
         { name: "FAQ" },
         { name: "Coming Soon" },
-        { name: "Error Page" }
-      ]
+        { name: "Error Page" },
+      ],
     },
     {
       name: "Elements",
@@ -444,8 +441,8 @@ export const store = reactive({
         { name: "Product List" },
         { name: "Image Gallery" },
         { name: "Masonry Gallery" },
-        { name: "Video Button" }
-      ]
-    }
-  ]
+        { name: "Video Button" },
+      ],
+    },
+  ],
 });
