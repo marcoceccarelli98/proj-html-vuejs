@@ -1,31 +1,51 @@
 <script>
 export default {
 	name: "PageHeader",
+	props: ["menu"]
 };
 </script>
 
 <template>
 	<header>
-		<div class="header-top">
-			<div class="row">
-				<div class="col-left">
-					<ul>
-						<li>welcome</li>
-						<li>CALL +44 300 303 0266</li>
-						<li>follow us</li>
-						<li>
-							<span><font-awesome-icon :icon="['fab', 'twitter']" /></span>
-							<span><font-awesome-icon :icon="['fab', 'instagram']" /></span>
-							<span><font-awesome-icon :icon="['fab', 'facebook-f']" /></span>
-						</li>
-					</ul>
-				</div>
-				<div class="col-right">
-					<a class="login" href="#">login</a>
-					<a class="register" href="register">register</a>
+		<div class="container-90">
+			<div class="header-top">
+				<div class="row">
+					<div class="col-left">
+						<ul>
+							<li>welcome</li>
+							<li>CALL +44 300 303 0266</li>
+							<li>follow us</li>
+							<li>
+								<span><font-awesome-icon :icon="['fab', 'twitter']" /></span>
+								<span><font-awesome-icon :icon="['fab', 'instagram']" /></span>
+								<span><font-awesome-icon :icon="['fab', 'facebook-f']" /></span>
+							</li>
+						</ul>
+					</div>
+					<div class="col-right">
+						<a class="login" href="#">login</a>
+						<a class="register" href="register">register</a>
+					</div>
 				</div>
 			</div>
-			<hr>
+		</div>
+		<hr>
+		<div class="container-90">
+			<div class="header-bottom">
+				<div class="row">
+					<div class="logo">
+						<img src="/logo-default.png" alt="">
+					</div>
+					<div class="menu">
+						<ul>
+							<li v-for="element in menu"> {{ element.name }}</li>
+						</ul>
+						<a href="#"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></a>
+						<a href="#"><font-awesome-icon :icon="['fas', 'bag-shopping']" /></a>
+						<a href="#"><font-awesome-icon :icon="['fas', 'bars']" /></a>
+					</div>
+				</div>
+			</div>
 		</div>
 		<nav>
 			<ul>
@@ -43,7 +63,9 @@ export default {
 	</header>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use "../styles/style.scss" as *;
+
 .row {
 	justify-content: space-between;
 	align-items: center;
@@ -51,23 +73,24 @@ export default {
 
 ul {
 	display: flex;
+	align-items: center;
 }
 
 li,
 a {
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 600;
 	color: rgb(108, 108, 108);
 }
 
-li,
+.header-top li,
 span {
-	margin: 15px 10px;
+	margin: 15px 20px 15px 0;
 }
 
-a {
-	padding: 15px 30px;
+.header-top a {
+	padding: 15px 20px;
 }
 
 .login {
@@ -83,5 +106,25 @@ hr {
 	border: none;
 	height: 0.5px;
 	background-color: lightgray;
+}
+
+.menu {
+	display: flex;
+}
+
+.menu li,
+.menu a {
+	margin: 30px 0 30px 40px;
+}
+
+.menu li:hover,
+.header-top span:hover {
+	color: $primary-color;
+}
+
+.logo img {
+	width: 100%;
+	height: 32px;
+	object-fit: cover;
 }
 </style>
