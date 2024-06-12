@@ -21,6 +21,9 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 /* add icons to the library */
 library.add(
   faSearch,
@@ -30,7 +33,10 @@ library.add(
   faAngleRight,
   faCheck,
   faTag,
-  faUser
+  faUser,
+  faTwitter,
+  faInstagram,
+  faFacebookF,
 );
 
 createApp(App)
