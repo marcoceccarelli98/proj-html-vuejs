@@ -1,14 +1,19 @@
 <script>
 export default {
 	name: "PageHeader",
-	props: ["menu"]
+	props: ["menu"],
+	computed: {
+		isHome() {
+			return this.$route.name === "home"
+		}
+	}
 };
 </script>
 
 <template>
 	<header>
 		<div class="container-90">
-			<div class="header-top">
+			<div class="header-top" :class="{ nodisplay: isHome }">
 				<div class="row">
 					<div class="col-left">
 						<ul>
@@ -31,14 +36,17 @@ export default {
 		</div>
 		<hr>
 		<div class="container-90">
-			<div class="header-bottom">
+			<div class="header-bottom" :class="{ displayhome: isHome }">
 				<div class="row">
-					<div class="logo">
+					<div v-if="isHome" class="logo">
+						<img src="/logo-light.png" alt="">
+					</div>
+					<div v-else class="logo">
 						<img src="/logo-default.png" alt="">
 					</div>
 					<div class="menu">
 						<ul>
-							<li v-for="element in menu"> {{ element.name }}</li>
+							<li v-for="  element   in   menu  "> {{ element.name }}</li>
 						</ul>
 						<a href="#"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></a>
 						<a href="#"><font-awesome-icon :icon="['fas', 'bag-shopping']" /></a>
@@ -82,6 +90,23 @@ a {
 	font-size: 14px;
 	font-weight: 600;
 	color: rgb(108, 108, 108);
+}
+
+.nodisplay {
+	display: none;
+}
+
+.displayhome {
+	position: absolute;
+	background-color: transparent;
+	z-index: 2;
+	top: 0;
+	width: 90%;
+}
+
+.header-bottom.displayhome li,
+.header-bottom.displayhome a {
+	color: white;
 }
 
 .header-top li,
