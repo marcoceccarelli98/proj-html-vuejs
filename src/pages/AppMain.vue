@@ -158,7 +158,7 @@ export default {
             Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
             lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
           </h4>
-          <CardsDotsCarousel :cards="store.onlineCourses" />
+          <!-- <CardsDotsCarousel :cards="store.onlineCourses" /> -->
         </div>
       </section>
       <!-- /ONLINE COURSES -->
@@ -337,6 +337,14 @@ export default {
           width: 90%;
         }
       }
+    }
+  }
+
+  //  ------------------------------ INFO ------------------------------
+
+  .online-courses {
+    h2 {
+      text-align: center;
     }
   }
 }
