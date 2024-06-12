@@ -4,7 +4,8 @@ export default {
 	props: ["menu"],
 	data() {
 		return {
-			currentItem: null
+			currentItem: null,
+			cartDisplay: false
 		}
 	},
 	computed: {
@@ -18,6 +19,12 @@ export default {
 		},
 		hideList() {
 			this.currentItem = null
+		},
+		showCart() {
+			this.cartDisplay = true
+		},
+		hideCart() {
+			this.cartDisplay = false
 		}
 	}
 };
@@ -81,7 +88,17 @@ export default {
 							</li>
 						</ul>
 						<a href="#"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></a>
-						<a href="#"><font-awesome-icon :icon="['fas', 'bag-shopping']" /></a>
+						<a href="#" @mouseover="showCart()" @mouseleave="hideCart()" class="cart-icon"><font-awesome-icon
+								:icon="['fas', 'bag-shopping']" />
+							<div class="cart-number">0</div>
+							<div v-if="cartDisplay" class="header-cart displaylists">
+								<ul>
+									<li class="subitem">
+										No products in the cart.
+									</li>
+								</ul>
+							</div>
+						</a>
 						<a href="#"><font-awesome-icon :icon="['fas', 'bars']" /></a>
 					</div>
 				</div>
@@ -117,7 +134,6 @@ a {
 
 .displayhome {
 	position: absolute;
-	background-color: transparent;
 	z-index: 2;
 	top: 0;
 	width: 90%;
@@ -176,26 +192,36 @@ hr {
 	object-fit: cover;
 }
 
-.header-lists {
-	display: none;
+.header-lists,
+.header-cart {
 	background-color: white;
 	position: absolute;
 	top: 100%;
-	left: 0;
 	z-index: 3;
 }
 
-.header-lists.displaylist {
+.header-lists {
+	left: 0;
+}
+
+.header-cart {
+	right: 0;
+}
+
+.header-lists.displaylist,
+.header-cart.displaylist {
 	display: block;
 }
 
-.header-lists ul {
+.header-lists ul,
+.header-cart ul {
 	border-top: 4px solid $primary-color;
 	display: flex;
 	flex-direction: column;
 }
 
-.header-lists ul .subitem {
+.header-lists ul .subitem,
+.header-cart ul .subitem {
 	display: block;
 	color: rgb(150, 150, 150);
 	font-weight: 300;
@@ -205,8 +231,29 @@ hr {
 	text-decoration: none;
 }
 
-.header-lists ul .subitem:hover {
+.header-lists ul .subitem:hover,
+.header-cart ul .subitem:hover {
 	background-color: rgba(0, 0, 0, 0.1);
 	color: $primary-color;
+}
+
+.cart-icon {
+	position: relative;
+}
+
+.cart-number {
+	width: 12px;
+	height: 12px;
+	padding: 5px;
+	background-color: $primary-color;
+	color: white;
+	position: absolute;
+	top: -3px;
+	right: -7px;
+	border-radius: 50%;
+	font-size: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 </style>
