@@ -2,9 +2,22 @@
 export default {
 	name: "PageHeader",
 	props: ["menu"],
+	data() {
+		return {
+			currentItem: null
+		}
+	},
 	computed: {
 		isHome() {
 			return this.$route.name === "home"
+		}
+	},
+	methods: {
+		showList(index) {
+			this.currentItem = index
+		},
+		hideList() {
+			this.currentItem = null
 		}
 	}
 };
@@ -46,7 +59,17 @@ export default {
 					</div>
 					<div class="menu">
 						<ul>
-							<li v-for="  element   in   menu  "> {{ element.name }}</li>
+							<li class="item" v-for="(item, index) in menu" @mouseover="showList(index)"
+								@mouseleave="hideList()">
+								{{ item.name }}
+								<div v-if="item.subItems && currentItem === index" class="header-lists displaylist">
+									<ul>
+										<li class="subitem" v-for="subItem in item.subItems" :key="subItem.name">
+											{{ subItem.name }}
+										</li>
+									</ul>
+								</div>
+							</li>
 						</ul>
 						<a href="#"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></a>
 						<a href="#"><font-awesome-icon :icon="['fas', 'bag-shopping']" /></a>
@@ -137,7 +160,11 @@ hr {
 	display: flex;
 }
 
-.menu li,
+.menu li {
+	position: relative;
+}
+
+.item,
 .menu a {
 	margin: 30px 0 30px 40px;
 }
@@ -151,5 +178,34 @@ hr {
 	width: 100%;
 	height: 32px;
 	object-fit: cover;
+}
+
+.header-lists {
+	display: none;
+	background-color: white;
+	color: rgb(108, 108, 108);
+	position: absolute;
+	top: 70px;
+	left: 0;
+	z-index: 3;
+}
+
+.header-lists.displaylist {
+	display: block;
+}
+
+.header-lists ul {
+	border-top: 4px solid $primary-color;
+	display: flex;
+	flex-direction: column;
+}
+
+.header-lists ul .subitem {
+	display: block;
+	color: rgb(150, 150, 150);
+	font-weight: 300;
+	padding: 15px;
+	text-transform: none;
+	min-width: 200px;
 }
 </style>

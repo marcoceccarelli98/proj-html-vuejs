@@ -292,48 +292,160 @@ export const store = reactive({
   header: [
     {
       name: "Home",
-      subItems: ["Home 1", "Home 2", "Home 3", "Home 4", "Home 5", "Home 6", "Home 7", "Home 8", "Home 9", "Home 10", "Home 11", "Home 12", "Landing"]
+      subItems: [
+        { name: "Home 1" },
+        { name: "Home 2" },
+        { name: "Home 3" },
+        { name: "Home 4" },
+        { name: "Home 5" },
+        { name: "Home 6" },
+        { name: "Home 7" },
+        { name: "Home 8" },
+        { name: "Home 9" },
+        { name: "Home 10" },
+        { name: "Home 11" },
+        { name: "Home 12" },
+        { name: "Landing" }
+      ]
     },
     {
       name: "Courses",
-      featuresSubItems: ["FEATURES", "All Courses", "Standard List", "Course Single", "User dashboard"],
-      businessSubItem: {
-        img: "course-4-f-img.jpg",
-        text: "Basic Marketing",
-        price: "$40"
-      },
-      languageSubItem: {
-        img: "course-1-f-img.jpg",
-        text: "Business English",
-        price: "$20"
-      },
-      programmingSubItem: {
-        img: "course-2-f-img.jpg",
-        text: "Social Computing",
-        price: "free"
-      }
+      subItems: [
+        { name: "FEATURES" },
+        { name: "All Courses" },
+        { name: "Standard List" },
+        { name: "Course Single" },
+        { name: "User dashboard" },
+        {
+          name: "BUSINESS",
+          img: "course-4-f-img.jpg",
+          text: "Basic Marketing",
+          price: "$40"
+        },
+        {
+          name: "LANGUAGE",
+          img: "course-1-f-img.jpg",
+          text: "Business English",
+          price: "$20"
+        },
+        {
+          name: "PROGRAMMING",
+          img: "course-2-f-img.jpg",
+          text: "Social Computing",
+          price: "free"
+        }
+      ],
     },
     {
       name: "Instructors",
-      subItems: ["Become an Instructor", "Instructor Single"]
+      subItems: [
+        { name: "Become an Instructor" },
+        { name: "Instructor Single" }
+      ]
     },
     {
       name: "Events",
-      subItems: ["Events Calendar", "Events List", "Event Single"]
+      subItems: [
+        { name: "Events Calendar" },
+        { name: "Events List" },
+        { name: "Event Single" }
+      ]
     },
     {
       name: "Pages",
-      subItems: ["About", "Gallery", "Pricing Plan", "Blog", "Shop", "Forums", "Contact", "FAQ", "Coming Soon", "Error Page"],
-      blogSubItems: ["Standard List", "Masonry List", "Blog Split", "Standard Post", "Quote Post", "Link Post", "Audio Post", "Video Post"],
-      shopSubItems: ["Shop List", "Standard Product", "Grouped Product", "External Product", "Variable Product", "Three Columns Grid", "Three Columns Wide", "Four Columns Grid", "Four Columns Wide", "Five Columns Grid", "Five Columns Wide", "My account", "Cart", "Checkout"],
-      forumSubItems: ["All Forums", "Forum Topic"]
+      subItems: [
+        { name: "About" },
+        { name: "Gallery" },
+        { name: "Pricing Plan" },
+        {
+          name: "Blog",
+          subItems: [
+            { name: "Standard List" },
+            { name: "Masonry List" },
+            { name: "Blog Split" },
+            { name: "Standard Post" },
+            { name: "Quote Post" },
+            { name: "Link Post" },
+            { name: "Audio Post" },
+            { name: "Video Post" }
+          ]
+        },
+        {
+          name: "Shop",
+          subItems: [
+            { name: "Shop List" },
+            { name: "Standard Product" },
+            { name: "Grouped Product" },
+            { name: "External Product" },
+            { name: "Variable Product" },
+            { name: "Three Columns Grid" },
+            { name: "Three Columns Wide" },
+            { name: "Four Columns Grid" },
+            { name: "Four Columns Wide" },
+            { name: "Five Columns Grid" },
+            { name: "Five Columns Wide" },
+            { name: "My account" },
+            { name: "Cart" },
+            { name: "Checkout" }
+          ]
+        },
+        {
+          name: "Forums",
+          subItems: [
+            { name: "All Forums" },
+            { name: "Forum Topic" }
+          ]
+        },
+        { name: "Contact" },
+        { name: "FAQ" },
+        { name: "Coming Soon" },
+        { name: "Error Page" }
+      ]
     },
     {
       name: "Elements",
-      courseSubItems: ["COURSE SHORTCODES", "Course List", "Course Slider", "Course Table", "Course Features", "Instructor List", "Instructor Slider", "Education Timeline", "Advanced Course Search", "Linked Image List"],
-      classicSubItems: ["CLASSIC", "Accordions & Toggles", "Tabs", "Buttons", "Call To Action", "Contact Form", "Separators", "Icon With Text", "Blockquote", "Typography"],
-      infographicSubItems: ["INFOGRAPHIC", "Counters", "Countdown", "Pie Charts", "Google Maps", "Process", "Progress Bar", "Events List", "Pricing Tables", "Comparison Pricing Tables"],
-      presentationSubItems: ["PRESENTATION", "Team Shortcode", "Testimonials", "Clients", "Blog List Shortcode", "Twitter List", "Product List", "Image Gallery", "Masonry Gallery", "Video Button"]
+      subItems: [
+        { name: "COURSE SHORTCODES" },
+        { name: "Course List" },
+        { name: "Course Slider" },
+        { name: "Course Table" },
+        { name: "Course Features" },
+        { name: "Instructor List" },
+        { name: "Instructor Slider" },
+        { name: "Education Timeline" },
+        { name: "Advanced Course Search" },
+        { name: "Linked Image List" },
+        { name: "CLASSIC" },
+        { name: "Accordions & Toggles" },
+        { name: "Tabs" },
+        { name: "Buttons" },
+        { name: "Call To Action" },
+        { name: "Contact Form" },
+        { name: "Separators" },
+        { name: "Icon With Text" },
+        { name: "Blockquote" },
+        { name: "Typography" },
+        { name: "INFOGRAPHIC" },
+        { name: "Counters" },
+        { name: "Countdown" },
+        { name: "Pie Charts" },
+        { name: "Google Maps" },
+        { name: "Process" },
+        { name: "Progress Bar" },
+        { name: "Events List" },
+        { name: "Pricing Tables" },
+        { name: "Comparison Pricing Tables" },
+        { name: "PRESENTATION" },
+        { name: "Team Shortcode" },
+        { name: "Testimonials" },
+        { name: "Clients" },
+        { name: "Blog List Shortcode" },
+        { name: "Twitter List" },
+        { name: "Product List" },
+        { name: "Image Gallery" },
+        { name: "Masonry Gallery" },
+        { name: "Video Button" }
+      ]
     }
   ]
 });
