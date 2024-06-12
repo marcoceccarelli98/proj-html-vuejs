@@ -1,15 +1,21 @@
 <script>
+// --- IMPORT ---
+
+// COMPONENTS
 import ArrowsCarousel from "../components/ArrowsCarousel.vue";
 import DotsCarousel from "../components/DotsCarousel.vue";
-import CardsDotsCarousel from "../components/CardsDotsCarousel.vue";
+import SwiperCardsCarousel from "../components/SwiperCardsCarousel.vue";
+
+// STORE
 import { store } from "../data/store.js";
 
+// --- EXPORT ---
 export default {
   name: "AppMain",
   components: {
     ArrowsCarousel,
     DotsCarousel,
-    CardsDotsCarousel,
+    SwiperCardsCarousel,
   },
 
   data() {
@@ -158,7 +164,7 @@ export default {
             Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
             lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
           </h4>
-          <!-- <CardsDotsCarousel :cards="store.onlineCourses" /> -->
+          <SwiperCardsCarousel :cards="store.onlineCourses" />
         </div>
       </section>
       <!-- /ONLINE COURSES -->
