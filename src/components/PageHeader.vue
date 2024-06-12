@@ -65,7 +65,16 @@ export default {
 								<div v-if="item.subItems && currentItem === index" class="header-lists displaylist">
 									<ul>
 										<li class="subitem" v-for="subItem in item.subItems" :key="subItem.name">
-											{{ subItem.name }}
+											<span v-if="subItem.name == 'Home 10'">
+												<router-link :to="{ name: 'home' }">{{ subItem.name }}</router-link>
+											</span>
+											<span v-else-if="subItem.name == 'About'">
+												<router-link :to="{ name: 'about' }">{{ subItem.name }}</router-link>
+											</span>
+											<span v-else-if="subItem.name == 'Contact'">
+												<router-link :to="{ name: 'contact' }">{{ subItem.name }}</router-link>
+											</span>
+											<span v-else> {{ subItem.name }}</span>
 										</li>
 									</ul>
 								</div>
@@ -78,19 +87,6 @@ export default {
 				</div>
 			</div>
 		</div>
-		<nav>
-			<ul>
-				<li>
-					<router-link :to="{ name: 'home' }">Home</router-link>
-				</li>
-				<li>
-					<router-link :to="{ name: 'about' }">Chi siamo</router-link>
-				</li>
-				<li>
-					<router-link :to="{ name: 'contact' }">Contatti</router-link>
-				</li>
-			</ul>
-		</nav>
 	</header>
 </template>
 
@@ -147,7 +143,7 @@ span {
 
 .register,
 .login {
-	border-right: 1px solid lightgrey
+	border-right: 1px solid lightgrey;
 }
 
 hr {
@@ -183,9 +179,8 @@ hr {
 .header-lists {
 	display: none;
 	background-color: white;
-	color: rgb(108, 108, 108);
 	position: absolute;
-	top: 70px;
+	top: 100%;
 	left: 0;
 	z-index: 3;
 }
@@ -207,5 +202,11 @@ hr {
 	padding: 15px;
 	text-transform: none;
 	min-width: 200px;
+	text-decoration: none;
+}
+
+.header-lists ul .subitem:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+	color: $primary-color;
 }
 </style>
