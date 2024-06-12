@@ -1,12 +1,15 @@
 <script>
 import ArrowsCarousel from "../components/ArrowsCarousel.vue";
 import DotsCarousel from "../components/DotsCarousel.vue";
+import CardsDotsCarousel from "../components/CardsDotsCarousel.vue";
 import { store } from "../data/store.js";
+
 export default {
   name: "AppMain",
   components: {
     ArrowsCarousel,
     DotsCarousel,
+    CardsDotsCarousel,
   },
 
   data() {
@@ -147,6 +150,18 @@ export default {
         </div>
       </section>
       <!-- /INFO -->
+      <!-- ONLINE COURSES -->
+      <section class="my-100">
+        <div class="online-courses">
+          <h2>Popular Online Courses</h2>
+          <h4>
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
+            lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
+          </h4>
+          <CardsDotsCarousel :cards="store.onlineCourses" />
+        </div>
+      </section>
+      <!-- /ONLINE COURSES -->
     </div>
   </main>
 </template>

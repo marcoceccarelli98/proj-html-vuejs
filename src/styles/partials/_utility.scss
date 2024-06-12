@@ -1,0 +1,124 @@
+/* --------------- UTILITY ---------------*/
+.border-dashed {
+  padding: 5px;
+  border: 1px solid;
+  border-style: dashed;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.align-center {
+  align-items: center;
+}
+
+/* PADDING */
+.py-10 {
+  padding: 10px 0;
+}
+
+.py-40 {
+  padding: 40px 0;
+}
+
+.px-10 {
+  padding: 0 10px;
+}
+
+.px-40 {
+  padding: 0 40px;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.pt-60 {
+  padding-top: 60px;
+}
+
+/* MARGIN */
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-50 {
+  margin: 50px;
+}
+
+.my-100 {
+  margin: 100px 0;
+}
+/* HEIGHT */
+.height-400px {
+  height: 400px;
+}
+
+.height-700px {
+  height: 700px;
+}
+
+/* TEXT COLOR */
+
+.white {
+  color: white;
+}
+
+.lilac {
+  color: #7189d9;
+}
+
+/* BACKGROUNDS */
+.bg-orange {
+  background-color: orange;
+}
+
+.bg-violet {
+  background-color: violet;
+}
+
+.bg-pink {
+  background-color: pink;
+}
+
+.bg-blue {
+  background-color: cornflowerblue;
+}
+
+.bg-darkblue {
+  background-color: darkblue;
+}
+
+.bg-lightgrey {
+  background-color: #f6f6f6;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.bg-darkgrey {
+  background-color: #23272a;
+}
+
+.bg-aquamarine {
+  background-color: aquamarine;
+}
+
+.bg-lilac {
+  background-color: #8ea1e1;
+}

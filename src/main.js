@@ -19,7 +19,8 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import { faTag } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 /* add icons to the library */
 library.add(
   faSearch,
@@ -27,7 +28,9 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faAngleRight,
-  faCheck
+  faCheck,
+  faTag,
+  faUser
 );
 
 createApp(App)
