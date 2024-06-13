@@ -624,11 +624,6 @@ export default {
 
 //  ------------------------------ ONLINE COURSES ------------------------------
 
-.bg-image {
-  background-image: url("/page-background-img.png");
-  padding: 100px 0;
-}
-
 //  ------------------------------ BEST TUTORS ------------------------------
 
 .titles-content {
