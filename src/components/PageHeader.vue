@@ -69,7 +69,9 @@ export default {
 						<img src="/logo-light.png" alt="">
 					</div>
 					<div v-else class="logo">
-						<img src="/logo-default.png" alt="">
+						<router-link :to="{ name: 'home' }">
+							<img src="/logo-default.png" alt="">
+						</router-link>
 					</div>
 					<div class="menu">
 						<ul>

@@ -43,8 +43,8 @@ export default {
 
 <template>
   <footer>
-    <div class="footer-top">
-      <div class="container">
+    <div class="container">
+      <div class="footer-top">
         <div class="row">
           <div class="col-25">
             <div>
@@ -66,19 +66,38 @@ export default {
             </div>
           </div>
           <div class="col-25">
-            <h2>Popular Courses</h2>
+            <h3>Popular Courses</h3>
             <div v-for="course in courses">
               <p class="course-name"><strong>{{ course.name }}</strong></p>
               <p class="course-prof">{{ course.professor }}</p>
             </div>
           </div>
           <div class="col-25">
-            <h2>Support</h2>
+            <h3>Support</h3>
             <p class="supports" v-for="support in supports">{{ support }}</p>
           </div>
           <div class="col-25">
-            <h2>Flexible Learning</h2>
+            <h3>Flexible Learning</h3>
             <img src="/footer-img-1.png" alt="">
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="footer-bottom">
+        <div class="row">
+          <div class="col-30">
+            <p class="rights">© 2017 Qode Interactive, All Rights Reserved</p>
+          </div>
+          <div class="col-30">
+            <ul>
+              <li>CALL +44 300 303 0266</li>
+              <li>follow us</li>
+              <li>
+                <span><font-awesome-icon :icon="['fab', 'twitter']" /></span>
+                <span><font-awesome-icon :icon="['fab', 'instagram']" /></span>
+                <span><font-awesome-icon :icon="['fab', 'facebook-f']" /></span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -90,15 +109,22 @@ export default {
 @use "../styles/style.scss" as *;
 
 .container {
-  color: lightgray;
-  background-color: rgba(0, 0, 0, 0.9);
-  height: 500px;
+  color: rgb(189, 189, 189);
+  background-color: #222;
 }
 
 .col-25 {
   width: calc(25% - 24px);
-  padding: 50px 0;
+  padding: 60px 0;
   margin: 40px;
+}
+
+.col-30 {
+  width: 30%;
+}
+
+.footer-top p {
+  font-size: 15px;
 }
 
 .contacts {
@@ -108,21 +134,21 @@ export default {
 
 img {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .logo {
-  width: 180px;
+  width: 160px;
 }
 
-h2 {
-  margin-bottom: 20px;
+h3 {
+  margin-bottom: 25px;
   color: white;
 }
 
 .course-prof,
 .supports {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .icon-contact {
@@ -137,5 +163,37 @@ h2 {
 
 .course-prof:hover {
   color: rgb(77, 77, 77);
+}
+
+hr {
+  background-color: rgb(77, 77, 77);
+  border: none;
+  height: 0.5px;
+  margin: 0 40px;
+}
+
+.footer-bottom {
+  padding: 30px 0;
+  color: rgb(123, 123, 123);
+}
+
+.footer-bottom .row {
+  justify-content: space-between;
+}
+
+.rights {
+  font-size: 14px;
+  margin-left: 40px;
+}
+
+.footer-bottom ul li {
+  display: inline;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.footer-bottom span {
+  padding: 8px;
 }
 </style>
