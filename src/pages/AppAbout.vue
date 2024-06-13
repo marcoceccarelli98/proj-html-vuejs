@@ -12,13 +12,13 @@ export default {
     EventsComponent,
     TutorsComponent,
     DotsCarousel,
-    FaqComponent
+    FaqComponent,
   },
   data() {
     return {
-      title: "About"
-    }
-  }
+      title: "About",
+    };
+  },
 };
 </script>
 
@@ -27,7 +27,7 @@ export default {
   <EventsComponent />
   <hr />
   <TutorsComponent />
-  <DotsCarousel />
+  <DotsCarousel :bgImage="'/h3-parallax-img-1.png'" />
   <FaqComponent />
 </template>
 

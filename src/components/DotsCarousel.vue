@@ -9,6 +9,13 @@ export default {
       currentActive: 0,
     };
   },
+
+  props: {
+    bgImage: {
+      type: String,
+    },
+  },
+
   methods: {
     selectActive(index) {
       this.currentActive = index;
@@ -36,7 +43,10 @@ export default {
 </script>
 
 <template>
-  <div class="parallax-container">
+  <div
+    :style="'background-image: url(' + bgImage + ')'"
+    class="parallax-container"
+  >
     <div
       class="container-70"
       v-for="(testimonial, index) in store.aboutTestimonials"
@@ -71,7 +81,6 @@ export default {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-image: url("/h3-parallax-img-1.png");
   background-size: cover;
   background-attachment: fixed;
   /* Effetto parallasse */

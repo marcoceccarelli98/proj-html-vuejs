@@ -102,11 +102,13 @@ export default {
         </div>
       </section>
       <!-- /EMPOWERING -->
-      <!-- ------------------------------ DOTS CAROUSEL ------------------------------ -->
-      <div class="container-1920">
-        <DotsCarousel />
-      </div>
-      <!-- /DOTS CAROUSEL -->
+    </div>
+    <!-- ------------------------------ DOTS CAROUSEL ------------------------------ -->
+    <div class="container-1920">
+      <DotsCarousel :bgImage="'/h5-parallax-img-1.png'" />
+    </div>
+    <!-- /DOTS CAROUSEL -->
+    <div class="container-70">
       <!-- ------------------------------ INFO ------------------------------ -->
       <section class="info-container">
         <div class="row">
@@ -171,7 +173,7 @@ export default {
               nibh id elit
             </h4>
           </div>
-          <SwiperCardsCarousel :cards="store.onlineCourses" />
+          <SwiperCardsCarousel :cards="store.homeOnlineCourses" />
         </section>
       </div>
     </div>
