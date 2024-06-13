@@ -6,6 +6,7 @@ export default {
 		return {
 			currentItem: null,
 			cartDisplay: false,
+			displayMenu: false,
 			links: ["Home 10", "About", "Contact"]
 		}
 	},
@@ -32,6 +33,10 @@ export default {
 		},
 		is70Width(item) {
 			return item.name === 'Elements';
+		},
+		displaySideMenu() {
+			this.displayMenu = !this.displayMenu;
+
 		}
 	}
 };
@@ -127,7 +132,25 @@ export default {
 								</ul>
 							</div>
 						</a>
-						<a class="font-link" href="#"><font-awesome-icon :icon="['fas', 'bars']" /></a>
+						<a class="font-link" @click="displaySideMenu()" href="#"><font-awesome-icon
+								:icon="['fas', 'bars']" /></a>
+						<div class="side-menu" :class="{ displaymenu: displayMenu }">
+							<div class="button-container">
+								<button @click="displaySideMenu()">&cross;</button>
+							</div>
+							<div class="container-side-menu">
+
+								<img class="img-side-menu" src="/sidearea-logo.png" alt="">
+								<p class="second-impression">There Is No Such Thing As A Second Impression.
+								</p>
+								<p class="follow-us">Don’t miss anything. Follow Us.</p>
+								<div>
+									<span class="primary"><font-awesome-icon :icon="['fab', 'twitter']" /></span>
+									<span class="blue"><font-awesome-icon :icon="['fab', 'facebook-f']" /></span>
+									<span class="red"><font-awesome-icon :icon="['fab', 'instagram']" /></span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -363,5 +386,74 @@ img {
 .header-lists.width100 ul .subnames:hover,
 .header-lists.width70 ul .subnames:hover {
 	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.side-menu {
+	display: none;
+	height: 100vh;
+	width: 600px;
+	background-color: white;
+	position: absolute;
+	right: 0;
+	z-index: 20;
+}
+
+.side-menu.displaymenu {
+	display: block
+}
+
+.button-container {
+	position: relative;
+	height: 70px;
+}
+
+.side-menu button {
+	position: absolute;
+	top: 20px;
+	right: 70px;
+	font-size: 25px;
+	color: gray;
+	border: none;
+	background-color: white;
+}
+
+.container-side-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 100px;
+	text-align: center;
+}
+
+.container-side-menu p {
+	margin: 30px 0;
+}
+
+.img-side-menu {
+	width: 70px;
+	height: 70px;
+}
+
+.second-impression {
+	color: rgb(146, 146, 146);
+	padding-bottom: 100px;
+}
+
+.follow-us,
+.second-impression {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.primary {
+	color: $primary-color;
+}
+
+.red {
+	color: red;
+}
+
+.blue {
+	color: blue;
 }
 </style>
