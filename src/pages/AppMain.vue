@@ -41,22 +41,24 @@ export default {
       }
     },
 
-    incNumberEffect() {
-      const incNum = this.num / 10;
+    incNumberEffect(num) {
+      const incNum = num / 10;
       console.log(incNum);
 
       this.userStories = 0;
 
-      console.log(this.num);
+      console.log(num);
       if (this.numIncInterval) {
         clearInterval(this.numIncInterval);
       }
 
       this.numIncInterval = setInterval(() => {
-        if (this.userStories < this.num) {
+        if (this.userStories < num) {
           this.userStories += incNum; //incNum;
+          return this.userStories;
         } else {
           //this.userStories = num;
+          return this.userStories;
           clearInterval(this.numIncInterval); // Stop the interval when the target number is reached
         }
       }, 100);
