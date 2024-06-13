@@ -52,7 +52,7 @@ export default {
 
       this.numIncInterval = setInterval(function () {
         if (this.userStories < num) {
-          this.userStories += incNum;
+          this.userStories += 1; //incNum;
           console.log(this.userStories);
         } else {
           //this.userStories = num;
