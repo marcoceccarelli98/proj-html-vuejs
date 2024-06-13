@@ -25,6 +25,7 @@ export default {
       userStories: 0,
       scheduledEvents: 0,
       numIncInterval: null,
+      num: 168,
     };
   },
   methods: {
@@ -40,26 +41,27 @@ export default {
       }
     },
 
-    incNumberEffect(num) {
-      const incNum = num / 10;
+    incNumberEffect() {
+      const incNum = this.num / 10;
       console.log(incNum);
 
       this.userStories = 0;
-      console.log(num);
+
+      console.log(this.num);
       if (this.numIncInterval) {
         clearInterval(this.numIncInterval);
       }
 
-      this.numIncInterval = setInterval(function () {
-        if (this.userStories < num) {
-          this.userStories += 1; //incNum;
-          console.log(this.userStories);
+      this.numIncInterval = setInterval(() => {
+        if (this.userStories < this.num) {
+          this.userStories += incNum; //incNum;
+          console.log("TRUE" + this.userStories);
         } else {
           //this.userStories = num;
           console.log(this.userStories);
-          clearInterval(this.numIncInterval); // Stop the interval when the target number is reached
+          clearInterval("FALSE" + this.numIncInterval); // Stop the interval when the target number is reached
         }
-      }, 3000);
+      }, 100);
     },
   },
 
@@ -126,7 +128,7 @@ export default {
           </p>
           <div class="numbers">
             <div class="stories">
-              <p class="number">{{ this.userStories }}</p>
+              <p class="number">{{ parseInt(this.userStories) }}</p>
               <p>User stories</p>
             </div>
             <div class="events">
