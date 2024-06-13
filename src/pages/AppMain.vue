@@ -55,11 +55,9 @@ export default {
       this.numIncInterval = setInterval(() => {
         if (this.userStories < this.num) {
           this.userStories += incNum; //incNum;
-          console.log("TRUE" + this.userStories);
         } else {
           //this.userStories = num;
-          console.log(this.userStories);
-          clearInterval("FALSE" + this.numIncInterval); // Stop the interval when the target number is reached
+          clearInterval(this.numIncInterval); // Stop the interval when the target number is reached
         }
       }, 100);
     },
