@@ -104,26 +104,25 @@ export const store = reactive({
     {
       name: "Courses",
       subItems: [
-        { name: "FEATURES" },
-        { name: "All Courses" },
-        { name: "Standard List" },
-        { name: "Course Single" },
-        { name: "User dashboard" },
+        {
+          name: "FEATURES",
+          subNames: ["All Courses", "Standard List", "Course Single", "User dashboard"]
+        },
         {
           name: "BUSINESS",
-          img: "course-4-f-img.jpg",
+          img: "/course-4-f-img.jpg",
           text: "Basic Marketing",
           price: "$40",
         },
         {
           name: "LANGUAGE",
-          img: "course-1-f-img.jpg",
+          img: "/course-1-f-img.jpg",
           text: "Business English",
           price: "$20",
         },
         {
           name: "PROGRAMMING",
-          img: "course-2-f-img.jpg",
+          img: "/course-2-f-img.jpg",
           text: "Social Computing",
           price: "free",
         },
@@ -195,46 +194,22 @@ export const store = reactive({
     {
       name: "Elements",
       subItems: [
-        { name: "COURSE SHORTCODES" },
-        { name: "Course List" },
-        { name: "Course Slider" },
-        { name: "Course Table" },
-        { name: "Course Features" },
-        { name: "Instructor List" },
-        { name: "Instructor Slider" },
-        { name: "Education Timeline" },
-        { name: "Advanced Course Search" },
-        { name: "Linked Image List" },
-        { name: "CLASSIC" },
-        { name: "Accordions & Toggles" },
-        { name: "Tabs" },
-        { name: "Buttons" },
-        { name: "Call To Action" },
-        { name: "Contact Form" },
-        { name: "Separators" },
-        { name: "Icon With Text" },
-        { name: "Blockquote" },
-        { name: "Typography" },
-        { name: "INFOGRAPHIC" },
-        { name: "Counters" },
-        { name: "Countdown" },
-        { name: "Pie Charts" },
-        { name: "Google Maps" },
-        { name: "Process" },
-        { name: "Progress Bar" },
-        { name: "Events List" },
-        { name: "Pricing Tables" },
-        { name: "Comparison Pricing Tables" },
-        { name: "PRESENTATION" },
-        { name: "Team Shortcode" },
-        { name: "Testimonials" },
-        { name: "Clients" },
-        { name: "Blog List Shortcode" },
-        { name: "Twitter List" },
-        { name: "Product List" },
-        { name: "Image Gallery" },
-        { name: "Masonry Gallery" },
-        { name: "Video Button" },
+        {
+          name: "COURSE SHORTCODES",
+          subNames: ["Course List", "Course Slider", "Course Table", "Course Features", "Instructor List", "Instructor Slider", "Education Timeline", "Advanced Course Search", "Linked Image List"]
+        },
+        {
+          name: "CLASSIC",
+          subNames: ["Accordions & Toggles", "Tabs", "Buttons", "Call To Action", "Contact Form", "Separators", "Icon With Text", "Blockquote", "Typography"]
+        },
+        {
+          name: "INFOGRAPHIC",
+          subNames: ["Counters", "Countdown", "Pie Charts", "Google Maps", "Process", "Progress Bar", "Events List", "Pricing Tables", "Comparison Pricing Tables"]
+        },
+        {
+          name: "PRESENTATION",
+          subNames: ["Team Shortcode", "Testimonials", "Clients", "Blog List Shortcode", "Twitter List", "Product List", "Image Gallery", "Masonry Gallery", "Video Button"]
+        }
       ],
     },
   ],

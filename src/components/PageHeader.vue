@@ -5,7 +5,8 @@ export default {
 	data() {
 		return {
 			currentItem: null,
-			cartDisplay: false
+			cartDisplay: false,
+			links: ["Home 10", "About", "Contact"]
 		}
 	},
 	computed: {
@@ -15,16 +16,22 @@ export default {
 	},
 	methods: {
 		showList(index) {
-			this.currentItem = index
+			this.currentItem = index;
 		},
 		hideList() {
-			this.currentItem = null
+			this.currentItem = null;
 		},
 		showCart() {
-			this.cartDisplay = true
+			this.cartDisplay = true;
 		},
 		hideCart() {
-			this.cartDisplay = false
+			this.cartDisplay = false;
+		},
+		isFullWidth(item) {
+			return item.name === 'Courses';
+		},
+		is70Width(item) {
+			return item.name === 'Elements';
 		}
 	}
 };
@@ -69,27 +76,46 @@ export default {
 							<li class="item" v-for="(item, index) in menu" @mouseover="showList(index)"
 								@mouseleave="hideList()">
 								{{ item.name }}
-								<div v-if="item.subItems && currentItem === index" class="header-lists displaylist">
-									<ul>
+								<div v-if="item.subItems && currentItem === index" class="header-lists displaylist"
+									:class="{ width100: isFullWidth(item), width70: is70Width(item) }">
+									<ul :class="{ flexrow: isFullWidth(item) || is70Width(item) }">
 										<li class="subitem" v-for="subItem in item.subItems" :key="subItem.name">
-											<span v-if="subItem.name == 'Home 10'">
-												<router-link :to="{ name: 'home' }">{{ subItem.name }}</router-link>
-											</span>
-											<span v-else-if="subItem.name == 'About'">
-												<router-link :to="{ name: 'about' }">{{ subItem.name }}</router-link>
-											</span>
-											<span v-else-if="subItem.name == 'Contact'">
-												<router-link :to="{ name: 'contact' }">{{ subItem.name }}</router-link>
-											</span>
+											<div class="router-container" v-if="subItem.name == 'Home 10'">
+												<router-link class="r-link" :to="{ name: 'home' }">{{ subItem.name
+												}}</router-link>
+											</div>
+											<div class="router-container" v-else-if="subItem.name == 'About'">
+												<router-link class="r-link" :to="{ name: 'about' }">{{ subItem.name
+												}}</router-link>
+											</div>
+											<div class="router-container" v-else-if="subItem.name == 'Contact'">
+												<router-link class="r-link" :to="{ name: 'contact' }">{{ subItem.name
+												}}</router-link>
+											</div>
 											<span v-else> {{ subItem.name }}</span>
+											<div class="courses"
+												v-if="subItem.name === 'BUSINESS' || subItem.name === 'LANGUAGE' || subItem.name === 'PROGRAMMING' || subItem.name === 'FEATURES' || subItem.name === 'COURSE SHORTCODES' || subItem.name === 'CLASSIC' || subItem.name === 'INFOGRAPHIC' || subItem.name === 'PRESENTATION'">
+												<div
+													v-if="subItem.name === 'FEATURES' || subItem.name === 'COURSE SHORTCODES' || subItem.name === 'CLASSIC' || subItem.name === 'INFOGRAPHIC' || subItem.name === 'PRESENTATION'">
+													<div class="course-item" v-for="subName in subItem.subNames"
+														:key="subName">
+														<div class="subnames">{{ subName }}</div>
+													</div>
+												</div>
+												<div class="course-item" v-else>
+													<img class="img-courses" :src="subItem.img">
+													<span class="text-courses">{{ subItem.text }}</span>
+													<span class="price-courses">{{ subItem.price }}</span>
+												</div>
+											</div>
 										</li>
 									</ul>
 								</div>
 							</li>
 						</ul>
-						<a href="#"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></a>
-						<a href="#" @mouseover="showCart()" @mouseleave="hideCart()" class="cart-icon"><font-awesome-icon
-								:icon="['fas', 'bag-shopping']" />
+						<a class="font-link" href="#"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></a>
+						<a href="#" @mouseover="showCart()" @mouseleave="hideCart()"
+							class="cart-icon font-link"><font-awesome-icon :icon="['fas', 'bag-shopping']" />
 							<div class="cart-number">0</div>
 							<div v-if="cartDisplay" class="header-cart displaylists">
 								<ul>
@@ -99,7 +125,7 @@ export default {
 								</ul>
 							</div>
 						</a>
-						<a href="#"><font-awesome-icon :icon="['fas', 'bars']" /></a>
+						<a class="font-link" href="#"><font-awesome-icon :icon="['fas', 'bars']" /></a>
 					</div>
 				</div>
 			</div>
@@ -121,7 +147,8 @@ ul {
 }
 
 li,
-a {
+.font-link,
+.header-top a {
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 600;
@@ -140,7 +167,7 @@ a {
 }
 
 .header-bottom.displayhome li,
-.header-bottom.displayhome a {
+.header-bottom.displayhome .font-link {
 	color: white;
 }
 
@@ -177,7 +204,7 @@ hr {
 }
 
 .item,
-.menu a {
+.menu .font-link {
 	margin: 30px 0 30px 40px;
 }
 
@@ -186,8 +213,11 @@ hr {
 	color: $primary-color;
 }
 
-.logo img {
+img {
 	width: 100%;
+}
+
+.logo img {
 	height: 32px;
 	object-fit: cover;
 }
@@ -220,15 +250,43 @@ hr {
 	flex-direction: column;
 }
 
+.header-lists ul.flexrow {
+	flex-direction: row;
+}
+
+.header-lists.width100 ul.flexrow .subitem:first-child {
+	min-height: 300px;
+}
+
 .header-lists ul .subitem,
-.header-cart ul .subitem {
+.header-cart ul .subitem,
+.r-link {
 	display: block;
 	color: rgb(150, 150, 150);
 	font-weight: 300;
-	padding: 15px;
+	padding: 12px;
 	text-transform: none;
 	min-width: 200px;
 	text-decoration: none;
+}
+
+.r-link {
+	margin: 0;
+}
+
+.router-container {
+	height: 18px;
+	display: flex;
+	align-items: center;
+}
+
+.r-link:hover {
+	color: $primary-color;
+}
+
+.subnames {
+	padding: 12px;
+	min-width: 200px;
 }
 
 .header-lists ul .subitem:hover,
@@ -255,5 +313,53 @@ hr {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.width100 {
+	width: 100vw;
+	left: -50vw;
+}
+
+.width70 {
+	width: 70vw;
+	left: -50vw;
+}
+
+.courses {
+	display: flex;
+	flex-wrap: wrap;
+	width: calc(25% - 25px);
+	margin-top: 10px;
+}
+
+.course-item {
+	margin: 5px 20px 0 5px;
+}
+
+.img-courses {
+	width: 325px;
+	margin-bottom: 20px;
+}
+
+.text-courses {
+	font-weight: 700;
+}
+
+.price-courses {
+	padding: 5px 15px;
+	background-color: $primary-color;
+	color: white;
+	border-radius: 15px;
+}
+
+.header-lists.width100 ul .subitem:hover,
+.header-lists.width70 ul .subitem:hover {
+	background-color: white;
+	color: rgb(150, 150, 150);
+}
+
+.header-lists.width100 ul .subnames:hover,
+.header-lists.width70 ul .subnames:hover {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 </style>
