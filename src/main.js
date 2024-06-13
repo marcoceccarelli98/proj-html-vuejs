@@ -18,7 +18,6 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -26,6 +25,8 @@ import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 /* add icons to the library */
 library.add(
   faSearch,
@@ -33,14 +34,15 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faAngleRight,
-  faCheck,
   faTag,
   faUser,
   faBars,
   faShoppingBag,
   faTwitter,
   faInstagram,
-  faFacebookF
+  faFacebookF,
+  faCheck,
+  faXmark
 );
 
 createApp(App)

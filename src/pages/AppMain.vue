@@ -29,7 +29,18 @@ export default {
       store.homeInfo.index = value;
       console.log(store.homeInfo.index);
     },
+
+    tickAndCross(value) {
+      if (value) {
+        return ["fas", "fa-check"];
+      } else {
+        return ["fas", "fa-xmark"];
+      }
+    },
   },
+
+  computed: {},
+
   created() {
     // console.log(store.homeTablePlans.coursesNum);
   },
@@ -313,19 +324,35 @@ export default {
               <tr>
                 <td>Time</td>
                 <td v-for="(value, index) in store.homeTablePlans.time">
-                  {{ store.homeTablePlans.time[index] }}
+                  {{ store.homeTablePlans.time[index] + " Days" }}
                 </td>
               </tr>
               <tr>
                 <td>Web Designing</td>
                 <td v-for="(value, index) in store.homeTablePlans.webDesign">
-                  {{ store.homeTablePlans.webDesign[index] }}
+                  <font-awesome-icon
+                    class="tableIcon"
+                    :class="{
+                      'primary-color': store.homeTablePlans.webDesign[index],
+                    }"
+                    :icon="
+                      this.tickAndCross(store.homeTablePlans.webDesign[index])
+                    "
+                  />
                 </td>
               </tr>
               <tr>
                 <td>Human-Centered Design</td>
                 <td v-for="(value, index) in store.homeTablePlans.humanDesign">
-                  {{ store.homeTablePlans.humanDesign[index] }}
+                  <font-awesome-icon
+                    class="tableIcon"
+                    :class="{
+                      'primary-color': store.homeTablePlans.humanDesign[index],
+                    }"
+                    :icon="
+                      this.tickAndCross(store.homeTablePlans.humanDesign[index])
+                    "
+                  />
                 </td>
               </tr>
               <tr>
@@ -333,28 +360,71 @@ export default {
                 <td
                   v-for="(value, index) in store.homeTablePlans.basicMarketing"
                 >
-                  {{ store.homeTablePlans.basicMarketing[index] }}
+                  <font-awesome-icon
+                    class="tableIcon"
+                    :class="{
+                      'primary-color':
+                        store.homeTablePlans.basicMarketing[index],
+                    }"
+                    :icon="
+                      this.tickAndCross(
+                        store.homeTablePlans.basicMarketing[index]
+                      )
+                    "
+                  />
                 </td>
               </tr>
               <tr>
                 <td>Python for Everybody</td>
                 <td v-for="(value, index) in store.homeTablePlans.python">
-                  {{ store.homeTablePlans.python[index] }}
+                  <font-awesome-icon
+                    class="tableIcon"
+                    :class="{
+                      'primary-color': store.homeTablePlans.python[index],
+                    }"
+                    :icon="
+                      this.tickAndCross(store.homeTablePlans.python[index])
+                    "
+                  />
                 </td>
               </tr>
               <tr>
                 <td>Android Developer</td>
                 <td v-for="(value, index) in store.homeTablePlans.android">
-                  {{ store.homeTablePlans.android[index] }}
+                  <font-awesome-icon
+                    class="tableIcon"
+                    :class="{
+                      'primary-color': store.homeTablePlans.android[index],
+                    }"
+                    :icon="
+                      this.tickAndCross(store.homeTablePlans.android[index])
+                    "
+                  />
                 </td>
               </tr>
               <tr>
                 <td>Business English</td>
                 <td v-for="(value, index) in store.homeTablePlans.businessEng">
-                  {{ store.homeTablePlans.businessEng[index] }}
+                  <font-awesome-icon
+                    class="tableIcon"
+                    :class="{
+                      'primary-color': store.homeTablePlans.businessEng[index],
+                    }"
+                    :icon="
+                      this.tickAndCross(store.homeTablePlans.businessEng[index])
+                    "
+                  />
                 </td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td><button class="btnGetItNow">Get it now</button></td>
+                <td><button class="btnGetItNow btnBlue">Get it now</button></td>
+                <td><button class="btnGetItNow">Get it now</button></td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
@@ -598,32 +668,86 @@ export default {
 }
 
 //  ------------------------------ PRICING PLANS ------------------------------
+
+.primary-color {
+  color: $primary-color;
+}
+
 .bg-image {
   .table-plans {
-    // TABLE SIZE
+    // TABLE
     table {
+      empty-cells: hide;
       width: 100%;
-    }
-    // TABLE BORDER
-    table,
-    th,
-    td {
-      border: 1px solid black;
       border-collapse: collapse;
-      padding: 25px;
-      text-align: center;
-    }
-    th {
-      img {
-        display: inline-block;
+      th,
+      td {
+        border: 1px solid $grey-subtitle;
+        padding: 20px;
+        text-align: center;
+        width: 25%;
+        &:first-of-type {
+          font-weight: bold;
+          text-align: start;
+        }
       }
-      height: 200px;
-    }
-    th,
-    td {
-      width: calc(100% / 4);
-      &:first-of-type {
-        text-align: start;
+      // TABLE HEAD
+      thead {
+        th {
+          background-color: #f7fdff;
+          height: 250px;
+          font-size: 25px;
+          border-top: 4px solid rgba($color: $primary-color, $alpha: 0.3);
+          &:nth-of-type(3) {
+            border-top: 4px solid rgba($color: $primary-color, $alpha: 1);
+          }
+          &:first-of-type {
+            background-color: white;
+          }
+          p {
+            margin: 10px;
+            &:last-of-type {
+              color: #646464;
+              font-size: 20px;
+            }
+          }
+          img {
+            display: inline-block;
+          }
+        }
+      }
+      // TABLE BODY
+      tbody {
+        color: grey;
+        font-size: 20px;
+        .tableIcon {
+          font-size: 20px;
+        }
+      }
+      // TABLE FOOTER
+      tfoot {
+        td {
+          height: 95px;
+          background-color: #f7fdff;
+          &:first-of-type {
+            background-color: transparent;
+            border-bottom: 0;
+            border-left: 0;
+          }
+          .btnGetItNow {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: grey;
+            padding: 15px 35px;
+            border: 2px solid lightgray;
+            &.btnBlue {
+              padding: 17px 35px;
+              color: white;
+              background-color: $primary-color;
+              border: none;
+            }
+          }
+        }
       }
     }
   }
