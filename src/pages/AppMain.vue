@@ -30,7 +30,9 @@ export default {
       console.log(store.homeInfo.index);
     },
   },
-  created() {},
+  created() {
+    // console.log(store.homeTablePlans.coursesNum);
+  },
 };
 </script>
 
@@ -41,8 +43,8 @@ export default {
 <template>
   <main>
     <!-- ------------------------------ CAROUSEL ------------------------------ -->
-    <ArrowsCarousel :carousel="store.homeCarousel" />
-    <div class="container-80">
+    <ArrowsCarousel :carousel="store.homeBigCarousel" />
+    <div class="container-70">
       <!-- ICON LIST -->
 
       <section class="icon-list">
@@ -74,7 +76,7 @@ export default {
       <!-- /THE TRUSTED NAME -->
     </div>
     <hr />
-    <div class="container-80">
+    <div class="container-70">
       <!-- ------------------------------ EMPOWERING ------------------------------ -->
       <section class="empowering row">
         <div class="col-60">
@@ -156,16 +158,19 @@ export default {
         </div>
       </section>
       <!-- /INFO -->
-      <!-- ONLINE COURSES -->
     </div>
+    <!-- ONLINE COURSES -->
     <div class="bg-image">
-      <div class="container-80">
-        <section class="online-courses my-100">
-          <h2>Popular Online Courses</h2>
-          <h4>
-            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
-            lorem quis bibendum auci elit consequat ipsutis sem nibh id elit
-          </h4>
+      <div class="container-70">
+        <section class="my-100">
+          <div class="titles-content max-w-700px">
+            <h2>Popular Online Courses</h2>
+            <h4>
+              Lorem ipsum gravida nibh vel velit auctor aliquetnean
+              sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem
+              nibh id elit
+            </h4>
+          </div>
           <SwiperCardsCarousel :cards="store.onlineCourses" />
         </section>
       </div>
@@ -174,8 +179,8 @@ export default {
     <!-- /ONLINE COURSES -->
     <!-- BEST TUTORS -->
     <section class="my-100">
-      <div class="container-80">
-        <div class="tutors-text">
+      <div class="container-70">
+        <div class="titles-content max-w-580px">
           <h2>The Best Tutors in Town</h2>
           <h4>
             Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
@@ -262,6 +267,98 @@ export default {
     </section>
     <hr />
     <!-- /BEST TUTORS -->
+    <!-- PRICING PLANS -->
+    <section class="bg-image">
+      <div class="container-70">
+        <div class="titles-content">
+          <h2>Pricing Plans</h2>
+          <h4>
+            Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin,
+            lorem quis bibendum auci
+          </h4>
+        </div>
+        <div class="table-plans">
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <span> Save up to 40% by paying weekly </span>
+                </th>
+                <th>
+                  <img src="/h5-custom-icon-7.png" alt="bulbIcon" />
+                  <p>Standard</p>
+                  <p>$12</p>
+                </th>
+                <th>
+                  <img src="/h5-custom-icon-8.png" alt="brainIcon" />
+                  <p>Professional</p>
+                  <p>$59</p>
+                </th>
+                <th>
+                  <img src="/h5-custom-icon-9.png" alt="capIcon" />
+                  <p>Advanced</p>
+                  <p>$88</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Number of Courses</td>
+                <td v-for="(value, index) in store.homeTablePlans.coursesNum">
+                  {{ store.homeTablePlans.coursesNum[index] }}
+                </td>
+              </tr>
+              <tr>
+                <td>Time</td>
+                <td v-for="(value, index) in store.homeTablePlans.time">
+                  {{ store.homeTablePlans.time[index] }}
+                </td>
+              </tr>
+              <tr>
+                <td>Web Designing</td>
+                <td v-for="(value, index) in store.homeTablePlans.webDesign">
+                  {{ store.homeTablePlans.webDesign[index] }}
+                </td>
+              </tr>
+              <tr>
+                <td>Human-Centered Design</td>
+                <td v-for="(value, index) in store.homeTablePlans.humanDesign">
+                  {{ store.homeTablePlans.humanDesign[index] }}
+                </td>
+              </tr>
+              <tr>
+                <td>Basic Marketing</td>
+                <td
+                  v-for="(value, index) in store.homeTablePlans.basicMarketing"
+                >
+                  {{ store.homeTablePlans.basicMarketing[index] }}
+                </td>
+              </tr>
+              <tr>
+                <td>Python for Everybody</td>
+                <td v-for="(value, index) in store.homeTablePlans.python">
+                  {{ store.homeTablePlans.python[index] }}
+                </td>
+              </tr>
+              <tr>
+                <td>Android Developer</td>
+                <td v-for="(value, index) in store.homeTablePlans.android">
+                  {{ store.homeTablePlans.android[index] }}
+                </td>
+              </tr>
+              <tr>
+                <td>Business English</td>
+                <td v-for="(value, index) in store.homeTablePlans.businessEng">
+                  {{ store.homeTablePlans.businessEng[index] }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- /PRICING PLANS -->
   </main>
 </template>
 
@@ -445,26 +542,14 @@ export default {
 .bg-image {
   background-image: url("/page-background-img.png");
   padding: 100px 0;
-  .online-courses {
-    text-align: center;
-    h2 {
-      font-size: 45px;
-      margin-bottom: 20px;
-    }
-    h4 {
-      color: gray;
-      font-weight: lighter;
-      margin-bottom: 80px;
-    }
-  }
 }
 
 //  ------------------------------ BEST TUTORS ------------------------------
 
-.tutors-text {
+.titles-content {
   margin: 0 auto;
   text-align: center;
-  max-width: 580px;
+
   h2 {
     font-size: 45px;
     margin-bottom: 20px;
@@ -506,6 +591,38 @@ export default {
     }
     .social-icon {
       margin: 0 10px;
+    }
+  }
+}
+
+//  ------------------------------ PRICING PLANS ------------------------------
+.bg-image {
+  .table-plans {
+    // TABLE SIZE
+    table {
+      width: 100%;
+    }
+    // TABLE BORDER
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 25px;
+      text-align: center;
+    }
+    th {
+      img {
+        display: inline-block;
+      }
+      height: 200px;
+    }
+    th,
+    td {
+      width: calc(100% / 4);
+      &:first-of-type {
+        text-align: start;
+      }
     }
   }
 }
