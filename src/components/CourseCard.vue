@@ -29,7 +29,6 @@ export default {
 
   computed: {
     getPrice() {
-      console.log(this.price);
       return this.price === 0 ? "Free" : "$" + this.price;
     },
     isFree() {

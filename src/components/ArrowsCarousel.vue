@@ -19,9 +19,7 @@ export default {
   },
 
   methods: {
-    test() {
-      console.log(carousel[0].image);
-    },
+    test() {},
     prev() {
       this.frame--;
       if (this.frame < 0) {
@@ -35,7 +33,6 @@ export default {
       }
     },
     autoInc() {
-      console.log("AUTO INC");
       const intervalCarousel = setInterval(() => this.next(), 5000); // 5000 ms = 5sec
     },
   },

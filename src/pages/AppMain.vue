@@ -22,12 +22,14 @@ export default {
     return {
       store,
       infoIndex: 0,
+      userStories: 0,
+      scheduledEvents: 0,
+      numIncInterval: null,
     };
   },
   methods: {
     setInfoIndex(value) {
       store.homeInfo.index = value;
-      console.log(store.homeInfo.index);
     },
 
     tickAndCross(value) {
@@ -37,12 +39,34 @@ export default {
         return ["fas", "fa-xmark"];
       }
     },
+
+    incNumberEffect(num) {
+      const incNum = num / 10;
+      console.log(incNum);
+
+      this.userStories = 0;
+      console.log(num);
+      if (this.numIncInterval) {
+        clearInterval(this.numIncInterval);
+      }
+
+      this.numIncInterval = setInterval(function () {
+        if (this.userStories < num) {
+          this.userStories += incNum;
+          console.log(this.userStories);
+        } else {
+          //this.userStories = num;
+          console.log(this.userStories);
+          clearInterval(this.numIncInterval); // Stop the interval when the target number is reached
+        }
+      }, 3000);
+    },
   },
 
   computed: {},
 
   created() {
-    // console.log(store.homeTablePlans.coursesNum);
+    this.incNumberEffect(168);
   },
 };
 </script>
@@ -87,8 +111,8 @@ export default {
       <!-- /THE TRUSTED NAME -->
     </div>
     <hr />
+    <!-- ------------------------------ EMPOWERING ------------------------------ -->
     <div class="container-70">
-      <!-- ------------------------------ EMPOWERING ------------------------------ -->
       <section class="empowering row">
         <div class="col-60">
           <img src="/h5-img-2.jpg" alt="" />
@@ -102,7 +126,7 @@ export default {
           </p>
           <div class="numbers">
             <div class="stories">
-              <p class="number">168</p>
+              <p class="number">{{ this.userStories }}</p>
               <p>User stories</p>
             </div>
             <div class="events">
@@ -112,8 +136,8 @@ export default {
           </div>
         </div>
       </section>
-      <!-- /EMPOWERING -->
     </div>
+    <!-- /EMPOWERING -->
     <!-- ------------------------------ DOTS CAROUSEL ------------------------------ -->
     <div class="container-1920">
       <DotsCarousel :bgImage="'/h5-parallax-img-1.png'" />
@@ -749,6 +773,12 @@ export default {
             padding: 15px 35px;
             border: 2px solid lightgray;
             &.btnBlue {
+              padding: 17px 35px;
+              color: white;
+              background-color: $primary-color;
+              border: none;
+            }
+            &:hover {
               padding: 17px 35px;
               color: white;
               background-color: $primary-color;
