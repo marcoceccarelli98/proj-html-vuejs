@@ -429,8 +429,21 @@ export default {
         </div>
       </div>
     </section>
-
     <!-- /PRICING PLANS -->
+    <!-- PARTNERS -->
+    <section class="my-100">
+      <div class="container-70">
+        <div class="partners">
+          <img src="/h5-client-4.png" alt="partner1" />
+          <img src="/h5-client-5.png" alt="partner2" />
+          <img src="/h5-client-1.png" alt="partner3" />
+          <img src="/h5-client-2.png" alt="partner4" />
+          <!-- Last element is intentionally wrong -->
+          <img src="/h5-client-1.png" alt="partner5" />
+        </div>
+      </div>
+    </section>
+    <!-- /PARTNERS -->
   </main>
 </template>
 
@@ -749,6 +762,20 @@ export default {
           }
         }
       }
+    }
+  }
+}
+
+//  ------------------------------ PARTNERS ------------------------------
+
+.partners {
+  display: flex;
+  justify-content: space-around;
+  img {
+    transition: 0.3s;
+    &:hover {
+      transition: 0.3s;
+      opacity: 0.6;
     }
   }
 }
